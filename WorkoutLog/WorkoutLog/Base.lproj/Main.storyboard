@@ -105,7 +105,13 @@
                             <outlet property="delegate" destination="Uro-PK-rgM" id="BFa-Ya-mLB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Create Day" id="fMw-5d-mNd"/>
+                    <navigationItem key="navigationItem" title="Create Day" id="fMw-5d-mNd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PIv-Td-9Zc">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="Uro-PK-rgM" id="A48-TU-hvM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQZ-4G-bsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

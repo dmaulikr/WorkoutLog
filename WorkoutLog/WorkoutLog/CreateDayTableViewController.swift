@@ -10,6 +10,69 @@ import UIKit
 
 class CreateDayTableViewController: UITableViewController {
 
+    @IBAction func addButtonTapped(_ sender: Any) {
+        let alertController = UIAlertController(title: "Add Exercise", message: "Add a new exercise to your workout", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        var nameTextField: UITextField?
+        var setsTextField: UITextField?
+        var repsTextField: UITextField?
+        var weightTextField: UITextField?
+        
+        alertController.addTextField { (textField) in
+            nameTextField = textField
+            textField.placeholder = "Required: Exercise name..."
+            textField.autocorrectionType = .yes
+            textField.autocapitalizationType = .sentences
+            textField.spellCheckingType = .yes
+        }
+        alertController.addTextField { (textField) in
+            setsTextField = textField
+            textField.placeholder = "Optional: Number of sets..."
+            textField.keyboardType = .numberPad
+        }
+        alertController.addTextField { (textField) in
+            repsTextField = textField
+            textField.placeholder = "Optional: Number of reps..."
+            textField.keyboardType = .numberPad
+        }
+        alertController.addTextField { (textField) in
+            weightTextField = textField
+            textField.placeholder = "Optional: Most recent weight used..."
+            textField.keyboardType = .numberPad
+        }
+        let addedAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            guard let name = nameTextField?.text else { return }
+            var sets: Int64
+            var reps: Int64
+            var weight: Double
+            if (setsTextField?.text?.isEmpty)! {
+                sets = 1
+            } else {
+                sets = Int64((setsTextField?.text)!)!
+            }
+            if (repsTextField?.text?.isEmpty)! {
+                reps = 1
+            } else {
+                reps = Int64((repsTextField?.text)!)!
+            }
+            if (weightTextField?.text?.isEmpty)! {
+                weight = 0.0
+            } else {
+                weight = Double((weightTextField?.text)!)!
+            }
+            let exercise = ExerciseController.shared.createExercise(name: name, sets: sets, reps: reps, weight: weight)
+            self.exercises?.append(exercise)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(addedAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    var exercises: [Exercise]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +87,7 @@ class CreateDayTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
