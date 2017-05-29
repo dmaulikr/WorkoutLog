@@ -17,6 +17,7 @@
 		4DCCDA3E1EDCAFC0002BB5E6 /* Day+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA3D1EDCAFC0002BB5E6 /* Day+Convenience.swift */; };
 		4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA3F1EDCB2F4002BB5E6 /* Routine+Convenience.swift */; };
 		4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA431EDCB4E1002BB5E6 /* ExerciseController.swift */; };
+		4DCCDA461EDCB93B002BB5E6 /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA451EDCB93B002BB5E6 /* DayController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4DCCDA3D1EDCAFC0002BB5E6 /* Day+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Day+Convenience.swift"; sourceTree = "<group>"; };
 		4DCCDA3F1EDCB2F4002BB5E6 /* Routine+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Routine+Convenience.swift"; sourceTree = "<group>"; };
 		4DCCDA431EDCB4E1002BB5E6 /* ExerciseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseController.swift; sourceTree = "<group>"; };
+		4DCCDA451EDCB93B002BB5E6 /* DayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4DCCDA431EDCB4E1002BB5E6 /* ExerciseController.swift */,
+				4DCCDA451EDCB93B002BB5E6 /* DayController.swift */,
 			);
 			name = ModelControllers;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCCDA461EDCB93B002BB5E6 /* DayController.swift in Sources */,
 				4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */,
 				4DCCDA3C1EDCACE1002BB5E6 /* Exercise+Convenience.swift in Sources */,
 				4DCCDA381EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld in Sources */,
