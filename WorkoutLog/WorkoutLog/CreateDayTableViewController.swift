@@ -1,5 +1,5 @@
 //
-//  RoutineTableViewController.swift
+//  CreateDayTableViewController.swift
 //  WorkoutLog
 //
 //  Created by Colton Lemmon on 5/29/17.
@@ -8,31 +8,7 @@
 
 import UIKit
 
-class RoutineTableViewController: UITableViewController {
-    
-    @IBAction func addButtonTapped(_ sender: Any) {
-        let alertController = UIAlertController(title: "Add Routine", message: "Add a new workout routine.", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        var nameTextField: UITextField?
-        
-        alertController.addTextField { (textField) in
-            nameTextField = textField
-            textField.autocorrectionType = .yes
-            textField.autocapitalizationType = .sentences
-            textField.spellCheckingType = .yes
-        }
-        let addedAction = UIAlertAction(title: "Add", style: .default) { (_) in
-            guard let name = nameTextField?.text else { return }
-            RoutineController.shared.createRoutine(name: name)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-        alertController.addAction(cancelAction)
-        alertController.addAction(addedAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
+class CreateDayTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,18 +24,17 @@ class RoutineTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return RoutineController.shared.routines.count
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "routineCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
 
-        let routine = RoutineController.shared.routines[indexPath.row]
-        cell.textLabel?.text = routine.name
+        // Configure the cell...
 
         return cell
     }
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -95,22 +70,14 @@ class RoutineTableViewController: UITableViewController {
     }
     */
 
-
+    /*
     // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDayListSegue" {
-            guard let destinationVC = segue.destination as? DayListTableViewController,
-                let indexPath = tableView.indexPathForSelectedRow else { return }
-            let routine = RoutineController.shared.routines[indexPath.row]
-            if routine.days == nil {
-                destinationVC.routine = routine
-                destinationVC.title = "Please add a new day to your routine."
-            } else {
-                destinationVC.routine = routine
-            }
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-
+    */
 
 }

@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="6Fw-0T-wF5" kind="show" id="UAU-gP-rUy"/>
+                                    <segue destination="6Fw-0T-wF5" kind="show" identifier="toDayListSegue" id="UAU-gP-rUy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="845.60000000000002" y="-2.2488755622188905"/>
         </scene>
-        <!--Day List Table View Controller-->
+        <!--Title-->
         <scene sceneID="3dH-CP-Qm9">
             <objects>
                 <tableViewController id="6Fw-0T-wF5" customClass="DayListTableViewController" customModule="WorkoutLog" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,7 +56,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nvp-a2-kd6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dayCell" id="nvp-a2-kd6">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nvp-a2-kd6" id="tFg-gM-V15">
@@ -70,10 +70,46 @@
                             <outlet property="delegate" destination="6Fw-0T-wF5" id="aIz-kv-Nb2"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="bBh-3x-wEc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tqm-v3-Lbk">
+                            <connections>
+                                <segue destination="Uro-PK-rgM" kind="show" id="4jl-dL-UE8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kwj-FU-EHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1668" y="-2"/>
+        </scene>
+        <!--Create Day-->
+        <scene sceneID="52y-Xc-frp">
+            <objects>
+                <tableViewController id="Uro-PK-rgM" customClass="CreateDayTableViewController" customModule="WorkoutLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gbd-d4-bCB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseCell" id="pQW-eS-Nav">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pQW-eS-Nav" id="gU3-5U-szX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Uro-PK-rgM" id="BCU-b9-kgb"/>
+                            <outlet property="delegate" destination="Uro-PK-rgM" id="BFa-Ya-mLB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Create Day" id="fMw-5d-mNd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQZ-4G-bsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2455" y="-322"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lch-iV-5Ng">
