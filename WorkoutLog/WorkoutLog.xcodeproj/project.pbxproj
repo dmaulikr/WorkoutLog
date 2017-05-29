@@ -11,6 +11,9 @@
 		4DCCDA211EDC9249002BB5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */; };
 		4DCCDA231EDC9249002BB5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */; };
 		4DCCDA261EDC9249002BB5E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA241EDC9249002BB5E6 /* LaunchScreen.storyboard */; };
+		4DCCDA381EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA361EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld */; };
+		4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA391EDCAC98002BB5E6 /* CoreDataStack.swift */; };
+		4DCCDA3C1EDCACE1002BB5E6 /* Exercise+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA3B1EDCACE1002BB5E6 /* Exercise+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DCCDA251EDC9249002BB5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DCCDA271EDC9249002BB5E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DCCDA371EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutLog.xcdatamodel; sourceTree = "<group>"; };
+		4DCCDA391EDCAC98002BB5E6 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		4DCCDA3B1EDCACE1002BB5E6 /* Exercise+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercise+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			children = (
 				4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */,
 				4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */,
+				4DCCDA351EDCA69B002BB5E6 /* Models */,
 				4DCCDA2D1EDC9253002BB5E6 /* Resources */,
 			);
 			path = WorkoutLog;
@@ -67,6 +74,16 @@
 				4DCCDA271EDC9249002BB5E6 /* Info.plist */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		4DCCDA351EDCA69B002BB5E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4DCCDA361EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld */,
+				4DCCDA391EDCAC98002BB5E6 /* CoreDataStack.swift */,
+				4DCCDA3B1EDCACE1002BB5E6 /* Exercise+Convenience.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */,
+				4DCCDA3C1EDCACE1002BB5E6 /* Exercise+Convenience.swift in Sources */,
+				4DCCDA381EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld in Sources */,
 				4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +330,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4DCCDA361EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4DCCDA371EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodel */,
+			);
+			currentVersion = 4DCCDA371EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodel */;
+			path = WorkoutLog.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4DCCDA101EDC9249002BB5E6 /* Project object */;
 }
