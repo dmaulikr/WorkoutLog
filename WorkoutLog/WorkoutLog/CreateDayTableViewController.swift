@@ -40,6 +40,7 @@ class CreateDayTableViewController: UITableViewController {
             textField.placeholder = "Optional: Most recent weight used..."
             textField.keyboardType = .numberPad
         }
+        //TODO: fix this shit
         let addedAction = UIAlertAction(title: "Add", style: .default) { (_) in
             guard let name = nameTextField?.text else { return }
             var sets: Int64
@@ -87,7 +88,7 @@ class CreateDayTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

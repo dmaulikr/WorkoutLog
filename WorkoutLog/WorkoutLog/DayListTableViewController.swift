@@ -10,6 +10,33 @@ import UIKit
 
 class DayListTableViewController: UITableViewController {
     
+    //TODO: Add segue after Add button tapped
+    @IBAction func addButtonTapped(_ sender: Any) {
+        let alertController = UIAlertController(title: "Add Day", message: "Add a name for your new day.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        var nameTextField: UITextField?
+        
+        alertController.addTextField { (textField) in
+            nameTextField = textField
+            textField.autocorrectionType = .yes
+            textField.autocapitalizationType = .sentences
+            textField.spellCheckingType = .yes
+            textField.placeholder = "Name of day..."
+        }
+        let addedAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            guard let name = nameTextField?.text else { return }
+            let day = DayController.shared.createDay(name: name)
+            self.routine?.addToDays(day)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        alertController.addAction(cancelAction)
+        alertController.addAction(addedAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
     var routine: Routine?
 
     override func viewDidLoad() {
@@ -25,14 +52,16 @@ class DayListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        guard let days = routine?.days else { return 0 }
+        return days.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
 
-        // Configure the cell...
+        let day = routine?.days?[indexPath.row] as? Day
+        cell.textLabel?.text = day?.name
 
         return cell
     }

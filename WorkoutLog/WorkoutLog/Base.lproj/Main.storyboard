@@ -73,6 +73,7 @@
                     <navigationItem key="navigationItem" title="Title" id="bBh-3x-wEc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tqm-v3-Lbk">
                             <connections>
+                                <action selector="addButtonTapped:" destination="6Fw-0T-wF5" id="ja4-Vu-wYf"/>
                                 <segue destination="Uro-PK-rgM" kind="show" id="4jl-dL-UE8"/>
                             </connections>
                         </barButtonItem>
