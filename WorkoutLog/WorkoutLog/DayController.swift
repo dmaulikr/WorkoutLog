@@ -12,6 +12,7 @@ import CoreData
 class DayController {
     
     //MARK: - Shared Instance
+    static let shared = DayController()
     
     //MARK: - Internal Properties
     var days: [Day] {

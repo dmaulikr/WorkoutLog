@@ -19,6 +19,8 @@
 		4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA431EDCB4E1002BB5E6 /* ExerciseController.swift */; };
 		4DCCDA461EDCB93B002BB5E6 /* DayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA451EDCB93B002BB5E6 /* DayController.swift */; };
 		4DCCDA481EDCBB23002BB5E6 /* RoutineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA471EDCBB23002BB5E6 /* RoutineController.swift */; };
+		4DCCDA4A1EDCBF9B002BB5E6 /* RoutineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA491EDCBF9B002BB5E6 /* RoutineTableViewController.swift */; };
+		4DCCDA4C1EDCCB71002BB5E6 /* DayListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA4B1EDCCB71002BB5E6 /* DayListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		4DCCDA431EDCB4E1002BB5E6 /* ExerciseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseController.swift; sourceTree = "<group>"; };
 		4DCCDA451EDCB93B002BB5E6 /* DayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayController.swift; sourceTree = "<group>"; };
 		4DCCDA471EDCBB23002BB5E6 /* RoutineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineController.swift; sourceTree = "<group>"; };
+		4DCCDA491EDCBF9B002BB5E6 /* RoutineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTableViewController.swift; sourceTree = "<group>"; };
+		4DCCDA4B1EDCCB71002BB5E6 /* DayListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +74,9 @@
 			children = (
 				4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */,
 				4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */,
-				4DCCDA421EDCB3D8002BB5E6 /* ViewControllers */,
-				4DCCDA411EDCB3C4002BB5E6 /* ModelControllers */,
 				4DCCDA351EDCA69B002BB5E6 /* Models */,
+				4DCCDA411EDCB3C4002BB5E6 /* ModelControllers */,
+				4DCCDA421EDCB3D8002BB5E6 /* ViewControllers */,
 				4DCCDA2D1EDC9253002BB5E6 /* Resources */,
 			);
 			path = WorkoutLog;
@@ -113,6 +117,8 @@
 		4DCCDA421EDCB3D8002BB5E6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4DCCDA491EDCBF9B002BB5E6 /* RoutineTableViewController.swift */,
+				4DCCDA4B1EDCCB71002BB5E6 /* DayListTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -192,8 +198,10 @@
 			files = (
 				4DCCDA461EDCB93B002BB5E6 /* DayController.swift in Sources */,
 				4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */,
+				4DCCDA4C1EDCCB71002BB5E6 /* DayListTableViewController.swift in Sources */,
 				4DCCDA3C1EDCACE1002BB5E6 /* Exercise+Convenience.swift in Sources */,
 				4DCCDA481EDCBB23002BB5E6 /* RoutineController.swift in Sources */,
+				4DCCDA4A1EDCBF9B002BB5E6 /* RoutineTableViewController.swift in Sources */,
 				4DCCDA381EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld in Sources */,
 				4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */,
 				4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */,

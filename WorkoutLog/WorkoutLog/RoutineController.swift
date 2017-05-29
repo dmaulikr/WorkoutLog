@@ -12,6 +12,7 @@ import CoreData
 class RoutineController {
     
     //MARK: - Shared Instance
+    static let shared = RoutineController()
     
     //MARK: - Internal Properties
     var routines: [Routine] {
