@@ -28,14 +28,14 @@ class DayController {
     
     func createDay(name: String) -> Day {
         let day = Day(name: name, context: CoreDataStack.context)
-        //saveToPersistantStorage
+        saveToPersistantStorage()
         return day
     }
     
     func deleteDay(day: Day) {
         let moc = day.managedObjectContext
         moc?.delete(day)
-        //saveToPersistantStorage
+        saveToPersistantStorage()
     }
     
     //MARK: - Persistence
