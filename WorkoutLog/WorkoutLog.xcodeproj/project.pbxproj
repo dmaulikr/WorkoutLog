@@ -16,6 +16,7 @@
 		4DCCDA3C1EDCACE1002BB5E6 /* Exercise+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA3B1EDCACE1002BB5E6 /* Exercise+Convenience.swift */; };
 		4DCCDA3E1EDCAFC0002BB5E6 /* Day+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA3D1EDCAFC0002BB5E6 /* Day+Convenience.swift */; };
 		4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA3F1EDCB2F4002BB5E6 /* Routine+Convenience.swift */; };
+		4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA431EDCB4E1002BB5E6 /* ExerciseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4DCCDA3B1EDCACE1002BB5E6 /* Exercise+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Exercise+Convenience.swift"; sourceTree = "<group>"; };
 		4DCCDA3D1EDCAFC0002BB5E6 /* Day+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Day+Convenience.swift"; sourceTree = "<group>"; };
 		4DCCDA3F1EDCB2F4002BB5E6 /* Routine+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Routine+Convenience.swift"; sourceTree = "<group>"; };
+		4DCCDA431EDCB4E1002BB5E6 /* ExerciseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,8 @@
 			children = (
 				4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */,
 				4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */,
+				4DCCDA421EDCB3D8002BB5E6 /* ViewControllers */,
+				4DCCDA411EDCB3C4002BB5E6 /* ModelControllers */,
 				4DCCDA351EDCA69B002BB5E6 /* Models */,
 				4DCCDA2D1EDC9253002BB5E6 /* Resources */,
 			);
@@ -90,6 +94,21 @@
 				4DCCDA3F1EDCB2F4002BB5E6 /* Routine+Convenience.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		4DCCDA411EDCB3C4002BB5E6 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DCCDA431EDCB4E1002BB5E6 /* ExerciseController.swift */,
+			);
+			name = ModelControllers;
+			sourceTree = "<group>";
+		};
+		4DCCDA421EDCB3D8002BB5E6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +189,7 @@
 				4DCCDA381EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld in Sources */,
 				4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */,
 				4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */,
+				4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */,
 				4DCCDA3E1EDCAFC0002BB5E6 /* Day+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
