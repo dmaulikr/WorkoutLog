@@ -38,18 +38,13 @@ class DayListTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    //MARK: - Internal Properties
     
     var routine: Routine?
     var day: Day?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     // MARK: - Table view data source
@@ -77,17 +72,16 @@ class DayListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    //TODO: Fix this
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            guard let routine = routine else { return }
+            guard let day = routine.days?[indexPath.row] as? Day else { return }
+            DayController.shared.deleteDay(day: day)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -113,6 +107,13 @@ class DayListTableViewController: UITableViewController {
             guard let day = day else { return }
             destinationVC.routine = routine
             destinationVC.day = day
+            destinationVC.navigationItem.title = day.name
+        }
+        
+        if segue.identifier == "toExerciseListSegue" {
+            guard let destinationVC = segue.destination as? ExerciseListTableViewController else { return }
+            guard let routine = routine,
+                let day = day else { return }
             destinationVC.navigationItem.title = day.name
         }
     }
