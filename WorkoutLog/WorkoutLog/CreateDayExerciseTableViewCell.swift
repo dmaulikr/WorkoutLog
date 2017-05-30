@@ -17,7 +17,6 @@ class CreateDayExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var repsNumberLabel: UILabel!
     @IBOutlet weak var weightNumberLabel: UILabel!
     
-    
     //MARK: - Internal Properties
     
     var exercise: Exercise?

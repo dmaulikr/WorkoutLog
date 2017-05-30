@@ -1,5 +1,5 @@
 //
-//  ExerciseListTableViewController.swift
+//  ExerciseHistoryTableViewController.swift
 //  WorkoutLog
 //
 //  Created by Colton Lemmon on 5/30/17.
@@ -8,34 +8,24 @@
 
 import UIKit
 
-class ExerciseListTableViewController: UITableViewController {
+class ExerciseHistoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    // MARK: - Internal Properties
-    var routine: Routine?
-    var day: Day?
-    var exercises: [Exercise]?
-    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
         return 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseHistoryCell", for: indexPath)
+
+        // Configure the cell...
+
         return cell
     }
-
-    /*
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-    }
-    */
-
 }
