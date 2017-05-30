@@ -78,7 +78,7 @@ class DayListTableViewController: UITableViewController {
         if editingStyle == .delete {
             guard let routine = routine else { return }
             guard let day = routine.days?[indexPath.row] as? Day else { return }
-            DayController.shared.deleteDay(day: day)
+            DayController.shared.deleteDay(day: day, from: routine)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

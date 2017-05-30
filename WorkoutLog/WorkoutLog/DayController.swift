@@ -33,9 +33,10 @@ class DayController {
         return day
     }
     
-    func deleteDay(day: Day) {
+    func deleteDay(day: Day, from routine: Routine) {
         let moc = day.managedObjectContext
         moc?.delete(day)
+        routine.removeFromDays(day)
         saveToPersistantStorage()
     }
     

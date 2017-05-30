@@ -22,20 +22,29 @@ class ExerciseListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        guard let day = day,
+            let exercises = day.exercises else { return 0 }
+        return exercises.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
+        if day != nil {
+            let exercise = day?.exercises?[indexPath.row] as! Exercise
+            cell.textLabel?.text = exercise.name
+        }
         return cell
     }
 
-    /*
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if segue.identifier == "toHistorySegue" {
+            guard let destinationVC = segue.destination as? ExerciseHistoryTableViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            let exercise = day?.exercises?[indexPath.row] as! Exercise
+            destinationVC.navigationItem.title = exercise.name
+        }
     }
-    */
 
 }
