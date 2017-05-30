@@ -36,9 +36,10 @@ class ExerciseController {
         return exercise
     }
     
-    func deleteExercise(exercise: Exercise) {
+    func deleteExercise(exercise: Exercise, from day: Day) {
         let moc = exercise.managedObjectContext
         moc?.delete(exercise)
+        day.removeFromExercises(exercise)
         saveToPersistentStorage()
     }
     

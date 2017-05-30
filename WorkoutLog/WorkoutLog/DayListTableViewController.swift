@@ -10,7 +10,6 @@ import UIKit
 
 class DayListTableViewController: UITableViewController {
     
-    //TODO: Add segue after Add button tapped
     @IBAction func addButtonTapped(_ sender: Any) {
         let alertController = UIAlertController(title: "Add Day", message: "Add a name for your new day.", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -19,7 +18,7 @@ class DayListTableViewController: UITableViewController {
         alertController.addTextField { (textField) in
             nameTextField = textField
             textField.autocorrectionType = .yes
-            textField.autocapitalizationType = .sentences
+            textField.autocapitalizationType = .words
             textField.spellCheckingType = .yes
             textField.placeholder = "Name of day..."
         }
@@ -72,8 +71,6 @@ class DayListTableViewController: UITableViewController {
     }
     */
 
-    //TODO: Fix this
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let routine = routine else { return }
@@ -111,10 +108,12 @@ class DayListTableViewController: UITableViewController {
         }
         
         if segue.identifier == "toExerciseListSegue" {
-            guard let destinationVC = segue.destination as? ExerciseListTableViewController else { return }
+            guard let destinationVC = segue.destination as? ExerciseListTableViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
             guard let routine = routine,
-                let day = day else { return }
+                let day = routine.days?[indexPath.row] as? Day else { return }
             destinationVC.navigationItem.title = day.name
+            destinationVC.day = day
         }
     }
 

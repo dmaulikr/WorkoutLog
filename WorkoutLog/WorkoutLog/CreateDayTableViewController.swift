@@ -24,22 +24,22 @@ class CreateDayTableViewController: UITableViewController {
             nameTextField = textField
             textField.placeholder = "Required: Exercise name..."
             textField.autocorrectionType = .yes
-            textField.autocapitalizationType = .sentences
+            textField.autocapitalizationType = .words
             textField.spellCheckingType = .yes
         }
         alertController.addTextField { (textField) in
             setsTextField = textField
-            textField.placeholder = "Optional: Number of sets..."
+            textField.placeholder = "Number of sets... Default 1"
             textField.keyboardType = .numberPad
         }
         alertController.addTextField { (textField) in
             repsTextField = textField
-            textField.placeholder = "Optional: Number of reps..."
+            textField.placeholder = "Number of reps... Default 1"
             textField.keyboardType = .numberPad
         }
         alertController.addTextField { (textField) in
             weightTextField = textField
-            textField.placeholder = "Optional: Most recent weight used..."
+            textField.placeholder = "Most recent weight used..."
             textField.keyboardType = .numberPad
         }
         //TODO: fix this shit
@@ -111,17 +111,15 @@ class CreateDayTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            guard let day = day,
+                let exercise = day.exercises?[indexPath.row] as? Exercise else { return }
+            ExerciseController.shared.deleteExercise(exercise: exercise, from: day)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -137,15 +135,4 @@ class CreateDayTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
