@@ -26,6 +26,7 @@
 		4DCCDA531EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA521EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift */; };
 		4DCCDA551EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */; };
 		4DCCDA571EDE293A002BB5E6 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */; };
+		4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		4DCCDA521EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewController.swift; sourceTree = "<group>"; };
 		4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryTableViewController.swift; sourceTree = "<group>"; };
 		4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDayTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				4DCCDA4D1EDCD111002BB5E6 /* CreateDayTableViewController.swift */,
 				4DCCDA521EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift */,
 				4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */,
+				4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */,
 				4DCCDA511EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift in Sources */,
 				4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */,
+				4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */,
 				4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */,
 				4DCCDA3E1EDCAFC0002BB5E6 /* Day+Convenience.swift in Sources */,
 			);
