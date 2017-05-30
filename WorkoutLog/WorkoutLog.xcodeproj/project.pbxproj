@@ -25,6 +25,7 @@
 		4DCCDA511EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA501EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift */; };
 		4DCCDA531EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA521EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift */; };
 		4DCCDA551EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */; };
+		4DCCDA571EDE293A002BB5E6 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		4DCCDA501EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDayExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		4DCCDA521EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewController.swift; sourceTree = "<group>"; };
 		4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryTableViewController.swift; sourceTree = "<group>"; };
+		4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				4DCCDA501EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift */,
+				4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DCCDA461EDCB93B002BB5E6 /* DayController.swift in Sources */,
+				4DCCDA571EDE293A002BB5E6 /* ExerciseTableViewCell.swift in Sources */,
 				4DCCDA531EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift in Sources */,
 				4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */,
 				4DCCDA4E1EDCD111002BB5E6 /* CreateDayTableViewController.swift in Sources */,

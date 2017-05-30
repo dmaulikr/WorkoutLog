@@ -26,7 +26,8 @@ class ExerciseListTableViewController: UITableViewController {
             let exercises = day.exercises else { return 0 }
         return exercises.count
     }
-
+    
+    //TODO: - Make a good cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
         if day != nil {
@@ -44,6 +45,7 @@ class ExerciseListTableViewController: UITableViewController {
                 let indexPath = tableView.indexPathForSelectedRow else { return }
             let exercise = day?.exercises?[indexPath.row] as! Exercise
             destinationVC.navigationItem.title = exercise.name
+            destinationVC.exercise = exercise
         }
     }
 
