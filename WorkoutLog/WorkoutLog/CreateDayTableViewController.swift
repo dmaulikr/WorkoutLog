@@ -9,6 +9,8 @@
 import UIKit
 
 class CreateDayTableViewController: UITableViewController {
+    
+    //MARK: - Outlets and Actions
 
     @IBAction func addButtonTapped(_ sender: Any) {
         let alertController = UIAlertController(title: "Add Exercise", message: "Add a new exercise to your workout", preferredStyle: .alert)
@@ -62,7 +64,8 @@ class CreateDayTableViewController: UITableViewController {
                 weight = Double((weightTextField?.text)!)!
             }
             let exercise = ExerciseController.shared.createExercise(name: name, sets: sets, reps: reps, weight: weight)
-            self.exercises?.append(exercise)
+            self.exercises?.append(exercise) // Not sure about this either
+            self.day?.addToExercises(exercise) // Not sure about this
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -73,6 +76,8 @@ class CreateDayTableViewController: UITableViewController {
     }
     
     var exercises: [Exercise]?
+    var routine: Routine?
+    var day: Day?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,15 +92,21 @@ class CreateDayTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        if let exercises = exercises {
+            return exercises.count
+        } else {
+            return 0
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as? CreateDayExerciseTableViewCell else { return UITableViewCell() }
+        
+        guard let exercises = exercises else { return cell }
+        let exercise = exercises[indexPath.row]
+        cell.updateViews(exercise: exercise)
+        
         return cell
     }
     

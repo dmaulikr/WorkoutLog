@@ -22,6 +22,7 @@
 		4DCCDA4A1EDCBF9B002BB5E6 /* RoutineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA491EDCBF9B002BB5E6 /* RoutineTableViewController.swift */; };
 		4DCCDA4C1EDCCB71002BB5E6 /* DayListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA4B1EDCCB71002BB5E6 /* DayListTableViewController.swift */; };
 		4DCCDA4E1EDCD111002BB5E6 /* CreateDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA4D1EDCD111002BB5E6 /* CreateDayTableViewController.swift */; };
+		4DCCDA511EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA501EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		4DCCDA491EDCBF9B002BB5E6 /* RoutineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineTableViewController.swift; sourceTree = "<group>"; };
 		4DCCDA4B1EDCCB71002BB5E6 /* DayListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayListTableViewController.swift; sourceTree = "<group>"; };
 		4DCCDA4D1EDCD111002BB5E6 /* CreateDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDayTableViewController.swift; sourceTree = "<group>"; };
+		4DCCDA501EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDayExerciseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */,
 				4DCCDA351EDCA69B002BB5E6 /* Models */,
 				4DCCDA411EDCB3C4002BB5E6 /* ModelControllers */,
+				4DCCDA4F1EDDD450002BB5E6 /* Views */,
 				4DCCDA421EDCB3D8002BB5E6 /* ViewControllers */,
 				4DCCDA2D1EDC9253002BB5E6 /* Resources */,
 			);
@@ -124,6 +127,14 @@
 				4DCCDA4D1EDCD111002BB5E6 /* CreateDayTableViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4DCCDA4F1EDDD450002BB5E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4DCCDA501EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 				4DCCDA4A1EDCBF9B002BB5E6 /* RoutineTableViewController.swift in Sources */,
 				4DCCDA381EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld in Sources */,
 				4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */,
+				4DCCDA511EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift in Sources */,
 				4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */,
 				4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */,
 				4DCCDA3E1EDCAFC0002BB5E6 /* Day+Convenience.swift in Sources */,

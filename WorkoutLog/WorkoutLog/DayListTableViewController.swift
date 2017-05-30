@@ -27,9 +27,11 @@ class DayListTableViewController: UITableViewController {
             guard let name = nameTextField?.text else { return }
             let day = DayController.shared.createDay(name: name)
             self.routine?.addToDays(day)
+            self.day = day
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            self.performSegue(withIdentifier: "toCreateDaySegue", sender: self)
         }
         alertController.addAction(cancelAction)
         alertController.addAction(addedAction)
@@ -38,6 +40,7 @@ class DayListTableViewController: UITableViewController {
     
     
     var routine: Routine?
+    var day: Day?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,14 +104,17 @@ class DayListTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toCreateDaySegue" {
+            guard let destinationVC = segue.destination as? CreateDayTableViewController else { return }
+            guard let routine = routine else { return }
+            guard let day = day else { return }
+            destinationVC.routine = routine
+            destinationVC.day = day
+            destinationVC.navigationItem.title = day.name
+        }
     }
-    */
 
 }
