@@ -68,18 +68,15 @@ class RoutineTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            let routine = RoutineController.shared.routines[indexPath.row]
+            RoutineController.shared.deleteRoutine(routine: routine)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
-
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -105,9 +102,11 @@ class RoutineTableViewController: UITableViewController {
             let routine = RoutineController.shared.routines[indexPath.row]
             if routine.days == nil {
                 destinationVC.routine = routine
-                destinationVC.title = "Please add a new day to your routine."
+                destinationVC.navigationItem.title = "Please add a day to your routine ->"
             } else {
                 destinationVC.routine = routine
+                destinationVC.navigationItem.title = routine.name
+                
             }
         }
     }

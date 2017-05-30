@@ -93,18 +93,15 @@ class CreateDayTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if let exercises = exercises {
-            return exercises.count
-        } else {
-            return 0
-        }
+        guard let day = day else { return 0 }
+        return day.exercises!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as? CreateDayExerciseTableViewCell else { return UITableViewCell() }
         
-        guard let exercises = exercises else { return cell }
-        let exercise = exercises[indexPath.row]
+        guard let day = day else { return cell }
+        guard let exercise = day.exercises?.array[indexPath.row] as? Exercise else { return cell  }
         cell.updateViews(exercise: exercise)
         
         return cell
