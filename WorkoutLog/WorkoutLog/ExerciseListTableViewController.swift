@@ -29,10 +29,10 @@ class ExerciseListTableViewController: UITableViewController {
     
     //TODO: - Make a good cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as? ExerciseTableViewCell else { return UITableViewCell() }
         if day != nil {
             let exercise = day?.exercises?[indexPath.row] as! Exercise
-            cell.textLabel?.text = exercise.name
+            cell.updateViews(exercise: exercise)
         }
         return cell
     }

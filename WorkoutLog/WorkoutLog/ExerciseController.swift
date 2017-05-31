@@ -36,6 +36,12 @@ class ExerciseController {
         return exercise
     }
     
+    func updateExercise(exercise: Exercise, reps: Int64, weight: Double) -> Exercise {
+        exercise.reps = reps
+        exercise.weight = weight
+        return exercise
+    }
+    
     func deleteExercise(exercise: Exercise, from day: Day) {
         let moc = exercise.managedObjectContext
         moc?.delete(exercise)
