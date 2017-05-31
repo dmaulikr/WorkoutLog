@@ -36,9 +36,14 @@ class ExerciseController {
         return exercise
     }
     
-    func updateExercise(exercise: Exercise, reps: Int64, weight: Double) -> Exercise {
-        exercise.reps = reps
-        exercise.weight = weight
+    func updateExercise(exercise: Exercise, reps: Int64?, weight: Double?) -> Exercise {
+        if let reps = reps {
+            exercise.reps = reps
+        }
+        if let weight = weight {
+            exercise.weight = weight
+        }
+        saveToPersistentStorage()
         return exercise
     }
     

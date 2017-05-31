@@ -24,7 +24,11 @@ class ExerciseListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let day = day,
             let exercises = day.exercises else { return 0 }
-        return exercises.count
+        return exercises.set
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return day?.exercises?.count ?? 0
     }
     
     //TODO: - Make a good cell
