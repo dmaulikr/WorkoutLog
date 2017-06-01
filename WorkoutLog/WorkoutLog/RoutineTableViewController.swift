@@ -10,6 +10,8 @@ import UIKit
 
 class RoutineTableViewController: UITableViewController {
     
+    //MARK: - Outlets and Actions
+    
     @IBAction func addButtonTapped(_ sender: Any) {
         let alertController = UIAlertController(title: "Add Routine", message: "Add a new workout routine.", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -33,11 +35,12 @@ class RoutineTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-
+    //MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.clearsSelectionOnViewWillAppear = false
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.clearsSelectionOnViewWillAppear = false
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -52,11 +55,9 @@ class RoutineTableViewController: UITableViewController {
         cell.textLabel?.text = routine.name
         return cell
     }
-
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
+    
+    // MARK: - Cell Editing Methods
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let routine = RoutineController.shared.routines[indexPath.row]
@@ -64,10 +65,11 @@ class RoutineTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
     }
-
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }

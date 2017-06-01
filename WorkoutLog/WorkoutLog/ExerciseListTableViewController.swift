@@ -19,12 +19,35 @@ class ExerciseListTableViewController: UITableViewController {
     var day: Day?
     var exercises: [Exercise]?
     
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        guard let day = day,
-//            let exercises = day.exercises else { return ""}
-//        let exerciseArray = Array{exercises}
-//        guard let exercise = exerciseArray[section] as? Exercise else { return ""}
-//        return exercise.name
+    // MARK Section Header Methods
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let day = day,
+            let exercises = day.exercises else { return ""}
+        let exerciseArray = Array(exercises)
+        guard let exercise = exerciseArray[section] as? Exercise else { return ""}
+        
+        return exercise.name
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textAlignment = .center
+        header.textLabel?.textColor = .white
+        header.contentView.backgroundColor = .black
+        header.textLabel?.font = header.textLabel?.font.withSize(20)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        let footer = view as! UITableViewHeaderFooterView
+        footer.contentView.backgroundColor = .black
+    }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let label: UILabel = UILabel()
+//        label.textAlignment = .center
+//        //label.adjustsFontSizeToFitWidth = true
+//        return label
 //    }
     
 

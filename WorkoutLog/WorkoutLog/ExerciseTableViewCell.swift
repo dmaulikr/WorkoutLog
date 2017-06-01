@@ -16,7 +16,6 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var lastRepsLabel: UILabel!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var repsTextField: UITextField!
-    @IBOutlet weak var nameLabel: UILabel!
     
     @IBAction func weightEntered(_ sender: Any) {
         guard let set = set else { return }
@@ -35,7 +34,6 @@ class ExerciseTableViewCell: UITableViewCell {
         self.set = set
         lastWeightLabel.text = "\(set.weight)"
         lastRepsLabel.text = "\(set.reps)"
-        nameLabel.text = exercise.name
     }
     
     func updateViewsWithoutTitle(set:Sets) {
