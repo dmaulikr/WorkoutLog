@@ -19,6 +19,14 @@ class ExerciseListTableViewController: UITableViewController {
     var day: Day?
     var exercises: [Exercise]?
     
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        guard let day = day,
+//            let exercises = day.exercises else { return ""}
+//        let exerciseArray = Array{exercises}
+//        guard let exercise = exerciseArray[section] as? Exercise else { return ""}
+//        return exercise.name
+//    }
+    
 
     //TODO: Fix this
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,7 +34,7 @@ class ExerciseListTableViewController: UITableViewController {
             let exercises = day.exercises else { return 0 }
         let exerciseArray = Array(exercises)
         guard let exercise = exerciseArray[section] as? Exercise else { return 0 }
-        
+
         return exercise.sets?.count ?? 0
     }
     
