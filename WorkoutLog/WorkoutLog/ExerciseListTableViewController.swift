@@ -19,15 +19,18 @@ class ExerciseListTableViewController: UITableViewController {
     var day: Day?
     var exercises: [Exercise]?
     
-    // MARK: - Table view data source
 
     //TODO: Fix this
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let day = day,
             let exercises = day.exercises else { return 0 }
-        return 0
+        let exerciseArray = Array(exercises)
+        guard let exercise = exerciseArray[section] as? Exercise else { return 0 }
+        
+        return exercise.sets?.count ?? 0
     }
     
+    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return day?.exercises?.count ?? 0
     }
@@ -39,6 +42,19 @@ class ExerciseListTableViewController: UITableViewController {
 //            let exercise = day?.exercises?[indexPath.row] as! Exercise
 //            cell.updateViews(set: exercise)
 //        }
+        
+        guard let day = day,
+            let exercises = day.exercises else { return cell }
+        
+        let exerciseArray = Array(exercises) as! [Exercise]
+        
+        let exercise = exerciseArray[indexPath.section]
+        
+        let sets = exercise.sets
+        
+        guard let set = sets?[indexPath.row] as? Sets else { return cell }
+        
+        cell.updateViews(set: set, exercise: exercise)
         return cell
     }
 

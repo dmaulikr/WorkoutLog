@@ -31,11 +31,17 @@ class ExerciseTableViewCell: UITableViewCell {
     var exercise: Exercise?
     var set: Sets?
     
-    func updateViews(set: Sets) {
+    func updateViews(set: Sets, exercise: Exercise) {
         self.set = set
         lastWeightLabel.text = "\(set.weight)"
         lastRepsLabel.text = "\(set.reps)"
-        nameLabel.text = exercise?.name
+        nameLabel.text = exercise.name
+    }
+    
+    func updateViewsWithoutTitle(set:Sets) {
+        self.set = set
+        lastWeightLabel.text = "\(set.weight)"
+        lastRepsLabel.text = "\(set.reps)"
     }
     
     func updateSetWeight(set: Sets) -> Sets {

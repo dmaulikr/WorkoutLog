@@ -8,15 +8,7 @@
 
 import UIKit
 
-protocol CreateDayTableViewDelegate: class {
-    func dayValueChanged(_ day: Day)
-}
-
 class CreateDayTableViewController: UITableViewController {
-    
-    //MARK: - Delegate Property
-    
-    weak var delegate: CreateDayTableViewDelegate?
     
     //MARK: - Internal Properties
     
@@ -80,14 +72,19 @@ class CreateDayTableViewController: UITableViewController {
                 weight = Double((weightTextField?.text)!)!
             }
             let exercise = ExerciseController.shared.createExercise(name: name, initialSets: sets)
-            let set = SetController.shared.createSet(weight: weight, reps: reps)
+            var i = 0
+            //TODO amount of sets added might be off
+            while i < Int(exercise.initialSets) {
+                let set = SetController.shared.createSet(weight: weight, reps: reps)
+                exercise.addToSets(set)
+                self.sets.append(set) //TODO: Fix this
+                i += 1
+            }
             
-            self.sets.append(set) //TODO: Fix this
             self.exercise = exercise
-            exercise.addToSets(set)
+            //exercise.addToSets(set)
             self.exercises.append(exercise) // Not sure about this either
             self.day.addToExercises(exercise) // Not sure about this
-            self.delegate?.dayValueChanged(self.day)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -113,6 +110,12 @@ class CreateDayTableViewController: UITableViewController {
     //TODO: Fix this
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as? CreateDayExerciseTableViewCell else { return UITableViewCell() }
+        
+        guard let exercise1 = self.exercise else { return cell }
+        guard let exercise2 = exercise1.sets else { return cell }
+        let setArray = Array(exercise2)
+        //guard let set = setArray[indexPath.row] as? Sets else { return cell }
+        
         let set = sets[indexPath.row]
         let exercise = exercises[indexPath.row]
         cell.updateViews(exercise: exercise, set: set)

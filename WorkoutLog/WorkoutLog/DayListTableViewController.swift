@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DayListTableViewController: UITableViewController, CreateDayTableViewDelegate {
+class DayListTableViewController: UITableViewController {
     
     //MARK: - Outlets and Actions
     
@@ -39,12 +39,6 @@ class DayListTableViewController: UITableViewController, CreateDayTableViewDeleg
         self.present(alertController, animated: true, completion: nil)
     }
     
-    //MARK: - CreateDayListDelegate Method
-    
-    func dayValueChanged(_ day: Day) {
-        self.day = day
-    }
-    
     //MARK: - Internal Properties
     
     var routine: Routine?
@@ -52,7 +46,6 @@ class DayListTableViewController: UITableViewController, CreateDayTableViewDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
     }
 
     // MARK: - Table view data source
