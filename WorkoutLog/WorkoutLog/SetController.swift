@@ -27,20 +27,24 @@ class SetController {
     }
     
     //MARK: - Crud
-    func createSet(weight: Double?, reps: Int64?) -> Sets {
+    func createSet(weight: Double?, reps: Int64?, note: String?) -> Sets {
         let weight = weight ?? 0.0
         let reps = reps ?? 1
-        let set = Sets(weight: weight, reps: reps, context: CoreDataStack.context)
+        let note = note ?? ""
+        let set = Sets(weight: weight, reps: reps, note: note, context: CoreDataStack.context)
         saveToPersistentStorage()
         return set
     }
     
-    func updateSet(set: Sets, weight: Double?, reps: Int64?) -> Sets {
+    func updateSet(set: Sets, weight: Double?, reps: Int64?, note: String?) -> Sets {
         if let weight = weight {
             set.weight = weight
         }
         if let reps = reps {
             set.reps = reps
+        }
+        if let note = note {
+            set.note = note
         }
         saveToPersistentStorage()
         return set

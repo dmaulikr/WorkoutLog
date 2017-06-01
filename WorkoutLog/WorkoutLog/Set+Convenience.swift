@@ -12,10 +12,12 @@ import CoreData
 extension Sets {
     convenience init(weight: Double,
                      reps: Int64,
+                     note: String,
                      context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         
         self.weight = weight
         self.reps = reps
+        self.note = note
     }
 }

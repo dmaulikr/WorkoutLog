@@ -75,7 +75,7 @@ class CreateDayTableViewController: UITableViewController {
             var i = 0
             //TODO amount of sets added might be off
             while i < Int(exercise.initialSets) {
-                let set = SetController.shared.createSet(weight: weight, reps: reps)
+                let set = SetController.shared.createSet(weight: weight, reps: reps, note: nil)
                 exercise.addToSets(set)
                 self.sets.append(set) //TODO: Fix this
                 i += 1

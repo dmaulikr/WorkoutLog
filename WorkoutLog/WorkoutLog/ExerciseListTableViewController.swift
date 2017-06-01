@@ -12,6 +12,7 @@ class ExerciseListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
 
     // MARK: - Internal Properties

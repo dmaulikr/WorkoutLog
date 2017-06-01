@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExerciseTableViewCell: UITableViewCell {
+class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     //MARK: - Outlets and Actions
     
@@ -16,6 +16,7 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var lastRepsLabel: UILabel!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var repsTextField: UITextField!
+    @IBOutlet weak var noteTextField: UITextField!
     
     @IBAction func weightEntered(_ sender: Any) {
         guard let set = set else { return }
@@ -25,7 +26,10 @@ class ExerciseTableViewCell: UITableViewCell {
         guard let set = set else { return }
         updateSetReps(set: set)
     }
-    
+    @IBAction func noteEntered(_ sender: Any) {
+        guard let set = set else { return }
+        updateSetNote(set: set)
+    }
     
     var exercise: Exercise?
     var set: Sets?
@@ -34,28 +38,30 @@ class ExerciseTableViewCell: UITableViewCell {
         self.set = set
         lastWeightLabel.text = "\(set.weight)"
         lastRepsLabel.text = "\(set.reps)"
-    }
-    
-    func updateViewsWithoutTitle(set:Sets) {
-        self.set = set
-        lastWeightLabel.text = "\(set.weight)"
-        lastRepsLabel.text = "\(set.reps)"
+        noteTextField.text = set.note
     }
     
     func updateSetWeight(set: Sets) -> Sets {
         guard let weightString = weightTextField.text else { return set }
         guard let weight = Double(weightString) else { return set }
-        let updatedSet = SetController.shared.updateSet(set: set, weight: weight, reps: nil)
+        let updatedSet = SetController.shared.updateSet(set: set, weight: weight, reps: nil, note: nil)
         return updatedSet
     }
     
     func updateSetReps(set: Sets) -> Sets {
         guard let repsString = repsTextField.text else { return set }
         guard let reps = Int64(repsString) else { return set }
-        let updatedSet = SetController.shared.updateSet(set: set, weight: nil, reps: reps)
+        let updatedSet = SetController.shared.updateSet(set: set, weight: nil, reps: reps, note: nil)
         return updatedSet
     }
     
+    func updateSetNote(set: Sets) -> Sets {
+        guard let note = noteTextField.text else { return set }
+        let updatedSet = SetController.shared.updateSet(set: set, weight: nil, reps: nil, note: note)
+        return updatedSet
+    }
+    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

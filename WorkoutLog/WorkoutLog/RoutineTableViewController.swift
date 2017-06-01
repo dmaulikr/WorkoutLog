@@ -93,3 +93,16 @@ class RoutineTableViewController: UITableViewController {
     }
 
 }
+
+//MARK: - TableView Keyboard Extension
+extension UITableViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UITableViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
