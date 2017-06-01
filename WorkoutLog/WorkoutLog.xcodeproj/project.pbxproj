@@ -27,6 +27,8 @@
 		4DCCDA551EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */; };
 		4DCCDA571EDE293A002BB5E6 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */; };
 		4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */; };
+		4DCCDA5B1EDF5267002BB5E6 /* Set+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA5A1EDF5267002BB5E6 /* Set+Convenience.swift */; };
+		4DCCDA5D1EDF5309002BB5E6 /* SetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA5C1EDF5309002BB5E6 /* SetController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryTableViewController.swift; sourceTree = "<group>"; };
 		4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDayTableViewController.swift; sourceTree = "<group>"; };
+		4DCCDA5A1EDF5267002BB5E6 /* Set+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+Convenience.swift"; sourceTree = "<group>"; };
+		4DCCDA5C1EDF5309002BB5E6 /* SetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			children = (
 				4DCCDA361EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld */,
 				4DCCDA391EDCAC98002BB5E6 /* CoreDataStack.swift */,
+				4DCCDA5A1EDF5267002BB5E6 /* Set+Convenience.swift */,
 				4DCCDA3B1EDCACE1002BB5E6 /* Exercise+Convenience.swift */,
 				4DCCDA3D1EDCAFC0002BB5E6 /* Day+Convenience.swift */,
 				4DCCDA3F1EDCB2F4002BB5E6 /* Routine+Convenience.swift */,
@@ -120,6 +125,7 @@
 		4DCCDA411EDCB3C4002BB5E6 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4DCCDA5C1EDF5309002BB5E6 /* SetController.swift */,
 				4DCCDA431EDCB4E1002BB5E6 /* ExerciseController.swift */,
 				4DCCDA451EDCB93B002BB5E6 /* DayController.swift */,
 				4DCCDA471EDCBB23002BB5E6 /* RoutineController.swift */,
@@ -228,6 +234,7 @@
 				4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */,
 				4DCCDA4E1EDCD111002BB5E6 /* CreateDayTableViewController.swift in Sources */,
 				4DCCDA4C1EDCCB71002BB5E6 /* DayListTableViewController.swift in Sources */,
+				4DCCDA5D1EDF5309002BB5E6 /* SetController.swift in Sources */,
 				4DCCDA3C1EDCACE1002BB5E6 /* Exercise+Convenience.swift in Sources */,
 				4DCCDA551EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift in Sources */,
 				4DCCDA481EDCBB23002BB5E6 /* RoutineController.swift in Sources */,
@@ -238,6 +245,7 @@
 				4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */,
 				4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */,
 				4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */,
+				4DCCDA5B1EDF5267002BB5E6 /* Set+Convenience.swift in Sources */,
 				4DCCDA3E1EDCAFC0002BB5E6 /* Day+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

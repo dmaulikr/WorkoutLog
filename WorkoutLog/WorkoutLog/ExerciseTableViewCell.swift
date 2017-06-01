@@ -19,36 +19,37 @@ class ExerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBAction func weightEntered(_ sender: Any) {
-        guard let exercise = exercise else { return }
-        updateExerciseWeight(exercise: exercise)
+        guard let set = set else { return }
+        updateSetWeight(set: set)
     }
     @IBAction func repsEntered(_ sender: Any) {
-        guard let exercise = exercise else { return }
-        updateExerciseReps(exercise: exercise)
+        guard let set = set else { return }
+        updateSetReps(set: set)
     }
     
     
     var exercise: Exercise?
+    var set: Sets?
     
-    func updateViews(exercise: Exercise) {
-        self.exercise = exercise
-        lastWeightLabel.text = "\(exercise.weight)"
-        lastRepsLabel.text = "\(exercise.reps)"
-        nameLabel.text = exercise.name
+    func updateViews(set: Sets) {
+        self.set = set
+        lastWeightLabel.text = "\(set.weight)"
+        lastRepsLabel.text = "\(set.reps)"
+        nameLabel.text = exercise?.name
     }
     
-    func updateExerciseWeight(exercise: Exercise) -> Exercise {
-        guard let weightString = weightTextField.text else { return exercise }
-        guard let weight = Double(weightString) else { return exercise }
-        let updatedExercise = ExerciseController.shared.updateExercise(exercise: exercise, reps: nil, weight: weight)
-        return updatedExercise
+    func updateSetWeight(set: Sets) -> Sets {
+        guard let weightString = weightTextField.text else { return set }
+        guard let weight = Double(weightString) else { return set }
+        let updatedSet = SetController.shared.updateSet(set: set, weight: weight, reps: nil)
+        return updatedSet
     }
     
-    func updateExerciseReps(exercise: Exercise) -> Exercise {
-        guard let repsString = repsTextField.text else { return exercise }
-        guard let reps = Int64(repsString) else { return exercise }
-        let updatedExercise = ExerciseController.shared.updateExercise(exercise: exercise, reps: reps, weight: nil)
-        return updatedExercise
+    func updateSetReps(set: Sets) -> Sets {
+        guard let repsString = repsTextField.text else { return set }
+        guard let reps = Int64(repsString) else { return set }
+        let updatedSet = SetController.shared.updateSet(set: set, weight: nil, reps: reps)
+        return updatedSet
     }
     
     override func awakeFromNib() {

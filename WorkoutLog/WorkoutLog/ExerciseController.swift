@@ -27,25 +27,23 @@ class ExerciseController {
     }
     
     // MARK: - CRUD
-    func createExercise(name: String, sets: Int64?, reps: Int64?, weight: Double?) -> Exercise {
-        let sets = sets ?? 1
-        let reps = reps ?? 1
-        let weight = weight ?? 0.0
-        let exercise = Exercise(name: name, sets: sets, reps: reps, weight: weight, context: CoreDataStack.context)
+    func createExercise(name: String, initialSets: Int64?) -> Exercise {
+        let initialSets = initialSets ?? 1
+        let exercise = Exercise(name: name, initialSets: initialSets, context: CoreDataStack.context)
         saveToPersistentStorage()
         return exercise
     }
     
-    func updateExercise(exercise: Exercise, reps: Int64?, weight: Double?) -> Exercise {
-        if let reps = reps {
-            exercise.reps = reps
-        }
-        if let weight = weight {
-            exercise.weight = weight
-        }
-        saveToPersistentStorage()
-        return exercise
-    }
+//    func updateExercise(exercise: Exercise, reps: Int64?, weight: Double?) -> Exercise {
+//        if let reps = reps {
+//            exercise.reps = reps
+//        }
+//        if let weight = weight {
+//            exercise.weight = weight
+//        }
+//        saveToPersistentStorage()
+//        return exercise
+//    }
     
     func deleteExercise(exercise: Exercise, from day: Day) {
         let moc = exercise.managedObjectContext
@@ -58,5 +56,4 @@ class ExerciseController {
     func saveToPersistentStorage() {
         (try? CoreDataStack.context.save())
     }
-    
 }

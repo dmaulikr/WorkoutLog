@@ -20,13 +20,15 @@ class CreateDayExerciseTableViewCell: UITableViewCell {
     //MARK: - Internal Properties
     
     var exercise: Exercise?
+    var set: Sets?
     
-    func updateViews(exercise: Exercise) {
+    func updateViews(exercise: Exercise, set: Sets) {
+        self.set = set
         self.exercise = exercise
         nameLabel.text = exercise.name
-        setsNumberLabel.text = "\(exercise.sets)"
-        repsNumberLabel.text = "\(exercise.reps)"
-        weightNumberLabel.text = "\(exercise.weight)"
+        setsNumberLabel.text = "\(exercise.initialSets)"
+        repsNumberLabel.text = "\(set.reps)"
+        weightNumberLabel.text = "\(set.weight)"
     }
 
 }

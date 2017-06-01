@@ -8,7 +8,9 @@
 
 import UIKit
 
-class DayListTableViewController: UITableViewController {
+class DayListTableViewController: UITableViewController, CreateDayTableViewDelegate {
+    
+    //MARK: - Outlets and Actions
     
     @IBAction func addButtonTapped(_ sender: Any) {
         let alertController = UIAlertController(title: "Add Day", message: "Add a name for your new day.", preferredStyle: .alert)
@@ -37,6 +39,12 @@ class DayListTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    //MARK: - CreateDayListDelegate Method
+    
+    func dayValueChanged(_ day: Day) {
+        self.day = day
+    }
+    
     //MARK: - Internal Properties
     
     var routine: Routine?
@@ -44,22 +52,20 @@ class DayListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         guard let days = routine?.days else { return 0 }
         return days.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
-
         let day = routine?.days?[indexPath.row] as? Day
         cell.textLabel?.text = day?.name
-
         return cell
     }
 

@@ -21,10 +21,11 @@ class ExerciseListTableViewController: UITableViewController {
     
     // MARK: - Table view data source
 
+    //TODO: Fix this
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let day = day,
             let exercises = day.exercises else { return 0 }
-        return exercises.set
+        return 0
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,10 +35,10 @@ class ExerciseListTableViewController: UITableViewController {
     //TODO: - Make a good cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as? ExerciseTableViewCell else { return UITableViewCell() }
-        if day != nil {
-            let exercise = day?.exercises?[indexPath.row] as! Exercise
-            cell.updateViews(exercise: exercise)
-        }
+//        if day != nil {
+//            let exercise = day?.exercises?[indexPath.row] as! Exercise
+//            cell.updateViews(set: exercise)
+//        }
         return cell
     }
 

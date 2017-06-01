@@ -8,7 +8,23 @@
 
 import UIKit
 
+protocol CreateDayTableViewDelegate: class {
+    func dayValueChanged(_ day: Day)
+}
+
 class CreateDayTableViewController: UITableViewController {
+    
+    //MARK: - Delegate Property
+    
+    weak var delegate: CreateDayTableViewDelegate?
+    
+    //MARK: - Internal Properties
+    
+    var sets: [Sets] = []
+    var exercises: [Exercise] = []
+    var routine: Routine?
+    var day: Day!
+    var exercise: Exercise? //TODO: Fix this
     
     //MARK: - Outlets and Actions
 
@@ -63,9 +79,15 @@ class CreateDayTableViewController: UITableViewController {
             } else {
                 weight = Double((weightTextField?.text)!)!
             }
-            let exercise = ExerciseController.shared.createExercise(name: name, sets: sets, reps: reps, weight: weight)
-            self.exercises?.append(exercise) // Not sure about this either
-            self.day?.addToExercises(exercise) // Not sure about this
+            let exercise = ExerciseController.shared.createExercise(name: name, initialSets: sets)
+            let set = SetController.shared.createSet(weight: weight, reps: reps)
+            
+            self.sets.append(set) //TODO: Fix this
+            self.exercise = exercise
+            exercise.addToSets(set)
+            self.exercises.append(exercise) // Not sure about this either
+            self.day.addToExercises(exercise) // Not sure about this
+            self.delegate?.dayValueChanged(self.day)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -75,11 +97,7 @@ class CreateDayTableViewController: UITableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    //MARK: - Internal Properties
-    
-    var exercises: [Exercise]?
-    var routine: Routine?
-    var day: Day?
+    //MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,16 +107,15 @@ class CreateDayTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        guard let day = day else { return 0 }
-        return day.exercises!.count
+        return exercises.count
     }
 
+    //TODO: Fix this
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as? CreateDayExerciseTableViewCell else { return UITableViewCell() }
-        
-        guard let day = day else { return cell }
-        guard let exercise = day.exercises?.array[indexPath.row] as? Exercise else { return cell  }
-        cell.updateViews(exercise: exercise)
+        let set = sets[indexPath.row]
+        let exercise = exercises[indexPath.row]
+        cell.updateViews(exercise: exercise, set: set)
         
         return cell
     }
@@ -111,7 +128,6 @@ class CreateDayTableViewController: UITableViewController {
     }
     */
 
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let day = day,
