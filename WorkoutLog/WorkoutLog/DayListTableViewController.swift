@@ -59,6 +59,11 @@ class DayListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dayCell", for: indexPath)
         let day = routine?.days?[indexPath.row] as? Day
         cell.textLabel?.text = day?.name
+        if day?.exercises?.count == 1 {
+            cell.detailTextLabel?.text = "1 exercise"
+        } else {
+            cell.detailTextLabel?.text = "\(day?.exercises?.count ?? 0) exercises"
+        }
         return cell
     }
 

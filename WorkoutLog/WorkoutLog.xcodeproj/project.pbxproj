@@ -89,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */,
-				4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */,
 				4DCCDA351EDCA69B002BB5E6 /* Models */,
 				4DCCDA411EDCB3C4002BB5E6 /* ModelControllers */,
 				4DCCDA4F1EDDD450002BB5E6 /* Views */,
@@ -136,6 +135,7 @@
 		4DCCDA421EDCB3D8002BB5E6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */,
 				4DCCDA491EDCBF9B002BB5E6 /* RoutineTableViewController.swift */,
 				4DCCDA4B1EDCCB71002BB5E6 /* DayListTableViewController.swift */,
 				4DCCDA4D1EDCD111002BB5E6 /* CreateDayTableViewController.swift */,
@@ -412,6 +412,7 @@
 				4DCCDA2C1EDC9249002BB5E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

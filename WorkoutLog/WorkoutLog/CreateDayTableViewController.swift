@@ -17,6 +17,8 @@ class CreateDayTableViewController: UITableViewController {
     var routine: Routine?
     var day: Day!
     var exercise: Exercise? //TODO: Fix this
+    var weight: [Double] = []
+    var reps: [Int64] = []
     
     //MARK: - Outlets and Actions
 
@@ -81,6 +83,8 @@ class CreateDayTableViewController: UITableViewController {
                 i += 1
             }
             
+            self.weight.append(weight)
+            self.reps.append(reps)
             self.exercise = exercise
             //exercise.addToSets(set)
             self.exercises.append(exercise) // Not sure about this either
@@ -100,7 +104,6 @@ class CreateDayTableViewController: UITableViewController {
         super.viewDidLoad()
         //self.clearsSelectionOnViewWillAppear = false
         //self.navigationItem.leftBarButtonItem = self.editButtonItem
-        
         self.hideKeyboardWhenTappedAround()
     }
 
@@ -114,9 +117,12 @@ class CreateDayTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as? CreateDayExerciseTableViewCell else { return UITableViewCell() }
         
-        let set = sets[indexPath.row]
         let exercise = exercises[indexPath.row]
-        cell.updateViews(exercise: exercise, set: set)
+        let weight = self.weight[indexPath.row]
+        let reps = self.reps[indexPath.row]
+        //let set = sets[indexPath.row]
+
+        cell.updateViews(exercise: exercise, weight: weight, reps: reps)
         
         return cell
     }
