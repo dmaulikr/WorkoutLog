@@ -98,23 +98,21 @@ class CreateDayTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.clearsSelectionOnViewWillAppear = false
+        //self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
+        self.hideKeyboardWhenTappedAround()
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return exercises.count
     }
 
     //TODO: Fix this
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as? CreateDayExerciseTableViewCell else { return UITableViewCell() }
-        
-        guard let exercise1 = self.exercise else { return cell }
-        guard let exercise2 = exercise1.sets else { return cell }
-        let setArray = Array(exercise2)
-        //guard let set = setArray[indexPath.row] as? Sets else { return cell }
         
         let set = sets[indexPath.row]
         let exercise = exercises[indexPath.row]
@@ -123,14 +121,6 @@ class CreateDayTableViewController: UITableViewController {
         return cell
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             guard let day = day,
@@ -140,18 +130,12 @@ class CreateDayTableViewController: UITableViewController {
         }
     }
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    */
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    }
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 }
