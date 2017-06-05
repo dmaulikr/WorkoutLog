@@ -27,7 +27,7 @@ class SetController {
     }
     
     //MARK: - Crud
-    func createSet(weight: Double?, reps: Int64?, note: String?) -> Sets {
+    func createSet(weight: Float?, reps: Int64?, note: String?) -> Sets {
         let weight = weight ?? 0.0
         let reps = reps ?? 1
         let note = note ?? ""
@@ -36,7 +36,7 @@ class SetController {
         return set
     }
     
-    func updateSet(set: Sets, weight: Double?, reps: Int64?, note: String?) -> Sets {
+    func updateSet(set: Sets, weight: Float?, reps: Int64?, note: String?) -> Sets {
         if let weight = weight {
             set.weight = weight
         }

@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 extension Sets {
-    convenience init(weight: Double,
+    convenience init(weight: Float,
                      reps: Int64,
                      note: String,
                      context: NSManagedObjectContext = CoreDataStack.context) {
