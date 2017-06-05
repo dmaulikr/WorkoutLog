@@ -227,7 +227,7 @@
                     <navigationItem key="navigationItem" title="Exercise List" id="gH8-h6-nXr">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="LkO-Gk-tb5">
                             <connections>
-                                <segue destination="IVK-rL-SZu" kind="show" id="RA0-22-xEh"/>
+                                <segue destination="IVK-rL-SZu" kind="show" identifier="toEditSegue" id="RA0-22-xEh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -245,7 +245,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LuX-dd-7Oy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseCell" id="LuX-dd-7Oy">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LuX-dd-7Oy" id="Slv-te-jW5">

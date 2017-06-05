@@ -100,6 +100,12 @@ class ExerciseListTableViewController: UITableViewController {
             destinationVC.navigationItem.title = exercise.name
             destinationVC.exercise = exercise
         }
+        
+        if segue.identifier == "toEditSegue" {
+            guard let destinationVC = segue.destination as? EditDayTableViewController else { return }
+            guard let day = day else { return }
+            destinationVC.day = day
+        }
     }
 
 }

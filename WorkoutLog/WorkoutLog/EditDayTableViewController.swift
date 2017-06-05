@@ -10,6 +10,8 @@ import UIKit
 
 class EditDayTableViewController: UITableViewController {
 
+    var day: Day?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.clearsSelectionOnViewWillAppear = false
@@ -21,13 +23,18 @@ class EditDayTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return day?.exercises?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath)
 
-        // Configure the cell...
+        guard let day = day,
+            let exercises = day.exercises else { return cell }
+        guard let exerciseArray = Array(exercises) as? [Exercise] else { return cell }
+        let exercise = exerciseArray[indexPath.row]
+        
+        cell.textLabel?.text = exercise.name
 
         return cell
     }
