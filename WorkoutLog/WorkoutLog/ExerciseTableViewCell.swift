@@ -43,7 +43,7 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func updateSetWeight(set: Sets) -> Sets {
         guard let weightString = weightTextField.text else { return set }
-        guard let weight = Double(weightString) else { return set }
+        guard let weight = Float(weightString) else { return set }
         let updatedSet = SetController.shared.updateSet(set: set, weight: weight, reps: nil, note: nil)
         return updatedSet
     }

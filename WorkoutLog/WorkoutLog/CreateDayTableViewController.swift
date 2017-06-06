@@ -17,7 +17,7 @@ class CreateDayTableViewController: UITableViewController {
     var routine: Routine?
     var day: Day!
     var exercise: Exercise? //TODO: Fix this
-    var weight: [Double] = []
+    var weight: [Float] = []
     var reps: [Int64] = []
     
     //MARK: - Outlets and Actions
@@ -57,7 +57,7 @@ class CreateDayTableViewController: UITableViewController {
             guard let name = nameTextField?.text else { return }
             var sets: Int64
             var reps: Int64
-            var weight: Double
+            var weight: Float
             if (setsTextField?.text?.isEmpty)! {
                 sets = 1
             } else {
@@ -71,7 +71,7 @@ class CreateDayTableViewController: UITableViewController {
             if (weightTextField?.text?.isEmpty)! {
                 weight = 0.0
             } else {
-                weight = Double((weightTextField?.text)!)!
+                weight = Float((weightTextField?.text)!)!
             }
             let exercise = ExerciseController.shared.createExercise(name: name, initialSets: sets)
             var i = 0

@@ -19,7 +19,7 @@ class CreateDayExerciseTableViewCell: UITableViewCell {
     
     //MARK: - Internal Properties
     
-    func updateViews(exercise: Exercise, weight: Double, reps: Int64) {
+    func updateViews(exercise: Exercise, weight: Float, reps: Int64) {
         nameLabel.text = exercise.name
         setsNumberLabel.text = "\(exercise.initialSets)"
         repsNumberLabel.text = "\(reps)"
