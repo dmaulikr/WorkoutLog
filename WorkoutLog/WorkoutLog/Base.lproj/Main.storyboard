@@ -415,10 +415,11 @@
             </objects>
             <point key="canvasLocation" x="2316" y="-457"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="Lch-iV-5Ng">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dFi-Bh-4dn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="UPu-YP-u2E"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4kJ-8d-9Wo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -433,5 +434,82 @@
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="-2.2488755622188905"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="FcB-Wn-OhQ">
+            <objects>
+                <tabBarController id="Ke8-Lp-va6" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Q4Y-yq-qsB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dFi-Bh-4dn" kind="relationship" relationship="viewControllers" id="SHg-nj-Idx"/>
+                        <segue destination="Tcd-VG-f54" kind="relationship" relationship="viewControllers" id="nEv-yH-oSJ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Esw-8p-kPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-782" y="535"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="cS8-2d-9ZE">
+            <objects>
+                <viewController id="Tcd-VG-f54" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wyS-My-tG9"/>
+                        <viewControllerLayoutGuide type="bottom" id="O6h-OG-kGh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eld-Fx-nex">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TapToAddImage" translatesAutoresizingMaskIntoConstraints="NO" id="k4F-FT-J9h">
+                                <rect key="frame" x="16" y="28" width="343" height="415"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Y4W-PD-fCh" appends="YES" id="HmA-4H-mJ4"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbf-o7-Ns5">
+                                <rect key="frame" x="151" y="480" width="72" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RyE-C5-kA6">
+                                <rect key="frame" x="139" y="509" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wF-8D-TWP">
+                                <rect key="frame" x="66" y="561" width="242" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tap To Add Measurements"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib6-wl-ECF">
+                                <rect key="frame" x="128" y="451" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="zuB-US-evi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pLY-6X-2do" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Y4W-PD-fCh"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="840.62968515742136"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="TapToAddImage" width="414" height="541"/>
+    </resources>
 </document>
