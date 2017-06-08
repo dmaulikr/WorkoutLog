@@ -8,16 +8,22 @@
 
 import UIKit
 
-class ExerciseListTableViewController: UITableViewController {
+class ExerciseListTableViewController: UITableViewController, EditedDayDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
     }
 
     // MARK: - Internal Properties
     var routine: Routine?
-    var day: Day?
+    //TODO: Fix data sent from editDayTableViewController
+    var day: Day? {
+        willSet {
+            tableView.reloadData()
+        }
+    }
     var exercises: [Exercise]?
     
     // MARK Section Header Methods
@@ -88,6 +94,13 @@ class ExerciseListTableViewController: UITableViewController {
         
         cell.updateViews(set: set, exercise: exercise)
         return cell
+    }
+    
+    //MARK: - Delegate Method
+    
+    func updateDay(day: Day) {
+        self.day = day
+        tableView.reloadData()
     }
 
     // MARK: - Navigation

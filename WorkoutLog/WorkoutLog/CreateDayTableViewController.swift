@@ -50,7 +50,7 @@ class CreateDayTableViewController: UITableViewController {
         alertController.addTextField { (textField) in
             weightTextField = textField
             textField.placeholder = "Most recent weight used..."
-            textField.keyboardType = .numberPad
+            textField.keyboardType = .decimalPad
         }
         //TODO: fix this shit
         let addedAction = UIAlertAction(title: "Add", style: .default) { (_) in

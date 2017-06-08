@@ -259,7 +259,13 @@
                             <outlet property="delegate" destination="IVK-rL-SZu" id="BTL-aE-0Ul"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Edit Day" id="a1E-iD-FAe"/>
+                    <navigationItem key="navigationItem" title="Edit Day" id="a1E-iD-FAe">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OjS-EG-euv">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="IVK-rL-SZu" id="Zoj-gr-V0Y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uz5-h7-PSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
