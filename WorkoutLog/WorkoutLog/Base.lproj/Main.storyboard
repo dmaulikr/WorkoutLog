@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dFi-Bh-4dn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ke8-Lp-va6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -151,7 +151,7 @@
                                                                                     <rect key="frame" x="250" y="0.0" width="125" height="47"/>
                                                                                     <nil key="textColor"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                                     <connections>
                                                                                         <action selector="weightEntered:" destination="VIM-Qr-XHf" eventType="editingDidEnd" id="Jso-ox-KnM"/>
                                                                                     </connections>
@@ -177,7 +177,7 @@
                                                                                     <rect key="frame" x="250" y="0.0" width="125" height="47.5"/>
                                                                                     <nil key="textColor"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                                                     <connections>
                                                                                         <action selector="repsEntered:" destination="VIM-Qr-XHf" eventType="editingDidEnd" id="wFk-1X-RaX"/>
                                                                                     </connections>

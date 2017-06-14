@@ -41,6 +41,10 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
         noteTextField.text = set.note
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+    
     func updateSetWeight(set: Sets) -> Sets {
         guard let weightString = weightTextField.text else { return set }
         guard let weight = Float(weightString) else { return set }
