@@ -14,6 +14,24 @@ class ExerciseListTableViewController: UITableViewController, EditedDayDelegate 
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        //Timer button
+        self.timerButton = UIButton(type: .custom)
+        self.timerButton.setTitleColor(.orange, for: .normal)
+        self.timerButton.addTarget(self, action: #selector(ButtonClick(_:)), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(timerButton)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        timerButton.layer.cornerRadius = timerButton.layer.frame.size.width/2
+        timerButton.clipsToBounds = true
+        timerButton.backgroundColor = .gray
+        timerButton.setImage(UIImage(named: "alarmIconSelected"), for: .normal)
+        timerButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([timerButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -3), timerButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -55), timerButton.widthAnchor.constraint(equalToConstant: 50), timerButton.heightAnchor.constraint(equalToConstant: 50)])
+    }
+    
+    @IBAction func ButtonClick(_ sender: UIButton) {
+        
     }
 
     // MARK: - Internal Properties
@@ -25,6 +43,8 @@ class ExerciseListTableViewController: UITableViewController, EditedDayDelegate 
         }
     }
     var exercises: [Exercise]?
+    
+    var timerButton = UIButton()
     
     // MARK Section Header Methods
     
@@ -41,7 +61,8 @@ class ExerciseListTableViewController: UITableViewController, EditedDayDelegate 
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textAlignment = .center
         header.textLabel?.textColor = .white
-        let headerColor = UIColor(red: 0/255, green: 64/255, blue: 94/255, alpha: 1.0)
+        //let headerColor = UIColor(red: 0/255, green: 64/255, blue: 94/255, alpha: 1.0)
+        let headerColor = UIColor.exerciseBlue
         //view.tintColor = headerColor
         header.contentView.backgroundColor = headerColor
         header.clipsToBounds = true

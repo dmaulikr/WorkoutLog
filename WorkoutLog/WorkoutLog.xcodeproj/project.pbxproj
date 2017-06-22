@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D15207C1EFC810E000A1E79 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15207B1EFC810E000A1E79 /* Colors.swift */; };
+		4D15207E1EFC8115000A1E79 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15207D1EFC8115000A1E79 /* Theme.swift */; };
 		4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */; };
 		4DCCDA211EDC9249002BB5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */; };
 		4DCCDA231EDC9249002BB5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D15207B1EFC810E000A1E79 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4D15207D1EFC8115000A1E79 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4DCCDA181EDC9249002BB5E6 /* WorkoutLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DCCDA201EDC9249002BB5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D15207A1EFC80F8000A1E79 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				4D15207B1EFC810E000A1E79 /* Colors.swift */,
+				4D15207D1EFC8115000A1E79 /* Theme.swift */,
+			);
+			name = Appearance;
+			sourceTree = "<group>";
+		};
 		4DCCDA0F1EDC9249002BB5E6 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */,
+				4D15207A1EFC80F8000A1E79 /* Appearance */,
 				4DCCDA351EDCA69B002BB5E6 /* Models */,
 				4DCCDA411EDCB3C4002BB5E6 /* ModelControllers */,
 				4DCCDA4F1EDDD450002BB5E6 /* Views */,
@@ -229,10 +243,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DCCDA461EDCB93B002BB5E6 /* DayController.swift in Sources */,
+				4D15207C1EFC810E000A1E79 /* Colors.swift in Sources */,
 				4DCCDA571EDE293A002BB5E6 /* ExerciseTableViewCell.swift in Sources */,
 				4DCCDA531EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift in Sources */,
 				4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */,
 				4DCCDA4E1EDCD111002BB5E6 /* CreateDayTableViewController.swift in Sources */,
+				4D15207E1EFC8115000A1E79 /* Theme.swift in Sources */,
 				4DCCDA4C1EDCCB71002BB5E6 /* DayListTableViewController.swift in Sources */,
 				4DCCDA5D1EDF5309002BB5E6 /* SetController.swift in Sources */,
 				4DCCDA3C1EDCACE1002BB5E6 /* Exercise+Convenience.swift in Sources */,
