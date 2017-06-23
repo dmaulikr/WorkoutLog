@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D15207C1EFC810E000A1E79 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15207B1EFC810E000A1E79 /* Colors.swift */; };
 		4D15207E1EFC8115000A1E79 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15207D1EFC8115000A1E79 /* Theme.swift */; };
+		4D1520801EFC9025000A1E79 /* ProgressPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */; };
 		4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */; };
 		4DCCDA211EDC9249002BB5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */; };
 		4DCCDA231EDC9249002BB5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		4D15207B1EFC810E000A1E79 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4D15207D1EFC8115000A1E79 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPhotoViewController.swift; sourceTree = "<group>"; };
 		4DCCDA181EDC9249002BB5E6 /* WorkoutLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DCCDA201EDC9249002BB5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				4DCCDA521EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift */,
 				4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */,
 				4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */,
+				4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				4DCCDA381EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld in Sources */,
 				4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */,
 				4DCCDA511EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift in Sources */,
+				4D1520801EFC9025000A1E79 /* ProgressPhotoViewController.swift in Sources */,
 				4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */,
 				4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */,
 				4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */,

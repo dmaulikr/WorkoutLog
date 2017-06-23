@@ -10,7 +10,12 @@ import UIKit
 
 enum Theme {
     static func configureAppearance() {
-        UINavigationBar.appearance().barTintColor = UIColor.exerciseGreen
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.exerciseOrange]
+        UINavigationBar.appearance().barTintColor = UIColor.exerciseDarkBlue
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.exerciseWhite]
+        
+        UITabBar.appearance().barTintColor = UIColor.exerciseDarkBlue
+        UITabBar.appearance().tintColor = UIColor.white
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.exerciseOrange], for: .highlighted)
     }
 }

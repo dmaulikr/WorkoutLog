@@ -61,18 +61,13 @@ class ExerciseListTableViewController: UITableViewController, EditedDayDelegate 
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textAlignment = .center
         header.textLabel?.textColor = .white
-        //let headerColor = UIColor(red: 0/255, green: 64/255, blue: 94/255, alpha: 1.0)
-        let headerColor = UIColor.exerciseBlue
+        let headerColor = UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 0.8)
+        let titleColor = UIColor.exerciseWhite
         //view.tintColor = headerColor
         header.contentView.backgroundColor = headerColor
         header.clipsToBounds = true
         header.textLabel?.font = header.textLabel?.font.withSize(20)
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        let footer = view as! UITableViewHeaderFooterView
-        let headerColor = UIColor(red: 0/255, green: 64/255, blue: 94/255, alpha: 1.0)
-        footer.contentView.backgroundColor = headerColor
+        header.textLabel?.textColor = titleColor
     }
     
 //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

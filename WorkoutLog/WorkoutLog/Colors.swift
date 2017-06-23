@@ -9,23 +9,23 @@
 import UIKit
 
 extension UIColor {
-    static var exerciseBlue: UIColor {
-        return UIColor(red: 0/255, green: 163/255, blue: 136/255, alpha: 1)
+    static var exerciseDarkBlue: UIColor {
+        return UIColor(red: 44/255, green: 62/255, blue: 80/255, alpha: 1)
     }
     
-    static var exerciseGreen: UIColor {
-        return UIColor(red: 121/255, green: 189/255, blue: 143/255, alpha: 0.9)
+    static var exerciseBlue: UIColor {
+        return UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1)
     }
     
     static var exerciseOrange: UIColor {
-        return UIColor(red: 255/255, green: 97/255, blue: 56/255, alpha: 0.8)
+        return UIColor(red: 231/255, green: 76/255, blue: 60/255, alpha: 1)
     }
     
-    static var exerciseYellow: UIColor {
-        return UIColor(red: 255/255, green: 255/255, blue: 157/255, alpha: 0.9)
+    static var exerciseWhite: UIColor {
+        return UIColor(red: 236/255, green: 240/255, blue: 241/255, alpha: 1)
     }
     
-    static var exerciseLightGreen: UIColor {
-        return UIColor(red: 190/255, green: 235/255, blue: 159/255, alpha: 0.9)
+    static var exerciseLightBlue: UIColor {
+        return UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1)
     }
 }
