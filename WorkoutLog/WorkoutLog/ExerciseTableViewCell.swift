@@ -34,6 +34,12 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
     var exercise: Exercise?
     var set: Sets?
     
+    override func prepareForReuse() {
+        weightTextField.text = ""
+        repsTextField.text = ""
+        noteTextField.text = ""
+    }
+    
     func updateViews(set: Sets, exercise: Exercise) {
         self.set = set
         lastWeightLabel.text = "\(set.weight)"

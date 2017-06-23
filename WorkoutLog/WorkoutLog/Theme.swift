@@ -12,6 +12,7 @@ enum Theme {
     static func configureAppearance() {
         UINavigationBar.appearance().barTintColor = UIColor.exerciseDarkBlue
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.exerciseWhite]
+        UINavigationBar.appearance().barStyle = .blackOpaque
         
         UITabBar.appearance().barTintColor = UIColor.exerciseDarkBlue
         UITabBar.appearance().tintColor = UIColor.white
