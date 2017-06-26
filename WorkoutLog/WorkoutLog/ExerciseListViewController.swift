@@ -1,36 +1,57 @@
 //
-//  ExerciseListTableViewController.swift
+//  ExerciseListViewController.swift
 //  WorkoutLog
 //
-//  Created by Colton Lemmon on 5/30/17.
+//  Created by Colton Lemmon on 6/26/17.
 //  Copyright © 2017 Colton. All rights reserved.
 //
 
 import UIKit
 
-class ExerciseListTableViewController: UITableViewController, EditedDayDelegate {
-
+class ExerciseListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var stopwatchContainerConstraint: NSLayoutConstraint!
+    
+    @IBAction func stopWatchButtonTapped(_ sender: Any) {
+        stopwatchContainerConstraint.constant = 0
+        UIView.animate(withDuration: 0.6) { 
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        //Swipe right gesture
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeRightGesture(swipe:)))
+        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
+        self.view.addGestureRecognizer(rightSwipe)
     }
-
+    
     // MARK: - Internal Properties
     
     var routine: Routine?
     //TODO: Fix data sent from editDayTableViewController
     var day: Day? {
         willSet {
-            tableView.reloadData()
+            if isViewLoaded {
+                tableView.reloadData()
+            }
         }
     }
     var exercises: [Exercise]?
+    
+    var swipeDelegate: SwipeRightDelegate?
     
     var timerButton = UIButton()
     
     // MARK Section Header Methods
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard let day = day,
             let exercises = day.exercises else { return ""}
         let exerciseArray = Array(exercises)
@@ -39,7 +60,7 @@ class ExerciseListTableViewController: UITableViewController, EditedDayDelegate 
         return exercise.name
     }
     
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textAlignment = .center
         header.textLabel?.textColor = .white
@@ -53,21 +74,21 @@ class ExerciseListTableViewController: UITableViewController, EditedDayDelegate 
     }
     
     // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let day = day,
             let exercises = day.exercises else { return 0 }
         let exerciseArray = Array(exercises)
         guard let exercise = exerciseArray[section] as? Exercise else { return 0 }
-
+        
         return exercise.sets?.count ?? 0
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return day?.exercises?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseCell", for: indexPath) as? ExerciseTableViewCell else { return UITableViewCell() }
         
         guard let day = day,
@@ -91,9 +112,9 @@ class ExerciseListTableViewController: UITableViewController, EditedDayDelegate 
         self.day = day
         tableView.reloadData()
     }
-
+    
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toHistorySegue" {
             guard let destinationVC = segue.destination as? ExerciseHistoryTableViewController,
@@ -110,4 +131,25 @@ class ExerciseListTableViewController: UITableViewController, EditedDayDelegate 
         }
     }
 
+}
+
+extension ExerciseListViewController {
+    
+    func swipeRightGesture(swipe: UISwipeGestureRecognizer) {
+        switch swipe.direction.rawValue {
+        case 1:
+            stopwatchContainerConstraint.constant = -240
+            UIView.animate(withDuration: 0.6, animations: { 
+                self.view.layoutIfNeeded()
+            })
+        default:
+            break
+        }
+        
+        swipeDelegate?.stopwatchViewControllerDismissed(self)
+    }
+}
+
+protocol SwipeRightDelegate {
+    func stopwatchViewControllerDismissed(_ sender: ExerciseListViewController)
 }

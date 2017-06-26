@@ -26,6 +26,6 @@ extension UIColor {
     }
     
     static var exerciseLightBlue: UIColor {
-        return UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1)
+        return UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 0.8)
     }
 }

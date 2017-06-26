@@ -112,7 +112,7 @@ class DayListTableViewController: UITableViewController {
         }
         
         if segue.identifier == "toExerciseListSegue" {
-            guard let destinationVC = segue.destination as? ExerciseListTableViewController,
+            guard let destinationVC = segue.destination as? ExerciseListViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
             guard let routine = routine,
                 let day = routine.days?[indexPath.row] as? Day else { return }
