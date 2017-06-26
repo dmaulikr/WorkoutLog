@@ -19,4 +19,5 @@ enum Theme {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.exerciseOrange], for: .highlighted)
     }
+    
 }
