@@ -5,6 +5,7 @@
         <relationship name="exercises" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Exercise" syncable="YES"/>
     </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="initialSets" attributeType="Integer 64" defaultValueString="1" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="sets" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Sets" syncable="YES"/>
@@ -20,7 +21,7 @@
     </entity>
     <elements>
         <element name="Day" positionX="-36" positionY="36" width="128" height="75"/>
-        <element name="Exercise" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="Exercise" positionX="-54" positionY="-9" width="128" height="105"/>
         <element name="Routine" positionX="-18" positionY="63" width="128" height="75"/>
         <element name="Sets" positionX="0" positionY="90" width="128" height="90"/>
     </elements>

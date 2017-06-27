@@ -26,11 +26,22 @@ class ExerciseController {
         }
     }
     
+    var currentDayExercise: Exercise?
+    
     // MARK: - CRUD
-    func createExercise(name: String, initialSets: Int64?) -> Exercise {
+    func createExercise(name: String, initialSets: Int64?, date: NSDate = NSDate()) -> Exercise {
         let initialSets = initialSets ?? 1
-        let exercise = Exercise(name: name, initialSets: initialSets, context: CoreDataStack.context)
+        let exercise = Exercise(name: name, initialSets: initialSets, date: date, context: CoreDataStack.context)
         saveToPersistentStorage()
+        return exercise
+    }
+    
+    func updatedExercise(exercise: Exercise) -> Exercise {
+        if let name = exercise.name {
+            let date = NSDate()
+            let updatedExercise = Exercise(name: name, date: date)
+            return updatedExercise
+        }
         return exercise
     }
     

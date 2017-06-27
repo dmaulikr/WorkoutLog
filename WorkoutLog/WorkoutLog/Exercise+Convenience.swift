@@ -12,10 +12,12 @@ import CoreData
 extension Exercise {
     convenience init(name: String,
                      initialSets: Int64 = 1,
+                     date: NSDate,
                      context: NSManagedObjectContext = CoreDataStack.context) {
         self.init(context: context)
         
         self.name = name
         self.initialSets = initialSets
+        self.date = date
     }
 }

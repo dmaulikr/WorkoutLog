@@ -8,17 +8,9 @@
 
 import UIKit
 
-class ExerciseListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
+class ExerciseListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var stopwatchContainerConstraint: NSLayoutConstraint!
-    
-    @IBAction func stopWatchButtonTapped(_ sender: Any) {
-        stopwatchContainerConstraint.constant = 0
-        UIView.animate(withDuration: 0.6) { 
-            self.view.layoutIfNeeded()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +18,6 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         
-        //Swipe right gesture
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeRightGesture(swipe:)))
-        rightSwipe.direction = UISwipeGestureRecognizerDirection.right
-        self.view.addGestureRecognizer(rightSwipe)
     }
     
     // MARK: - Internal Properties
@@ -44,10 +32,6 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     var exercises: [Exercise]?
-    
-    var swipeDelegate: SwipeRightDelegate?
-    
-    var timerButton = UIButton()
     
     // MARK Section Header Methods
     
@@ -131,25 +115,4 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
 
-}
-
-extension ExerciseListViewController {
-    
-    func swipeRightGesture(swipe: UISwipeGestureRecognizer) {
-        switch swipe.direction.rawValue {
-        case 1:
-            stopwatchContainerConstraint.constant = -240
-            UIView.animate(withDuration: 0.6, animations: { 
-                self.view.layoutIfNeeded()
-            })
-        default:
-            break
-        }
-        
-        swipeDelegate?.stopwatchViewControllerDismissed(self)
-    }
-}
-
-protocol SwipeRightDelegate {
-    func stopwatchViewControllerDismissed(_ sender: ExerciseListViewController)
 }

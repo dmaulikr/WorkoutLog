@@ -19,20 +19,27 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var noteTextField: UITextField!
     
     @IBAction func weightEntered(_ sender: Any) {
-        guard let set = set else { return }
-        updateSetWeight(set: set)
+        guard let set = set,
+            let exercise = exercise else { return }
+        newSet = updateSetWeight(set: set)
+        if newExercise == nil {
+            newExercise = ExerciseController.shared.updatedExercise(exercise: exercise)
+            newExercise?.addToSets(set)
+        }
     }
     @IBAction func repsEntered(_ sender: Any) {
         guard let set = set else { return }
-        updateSetReps(set: set)
+        newSet = updateSetReps(set: set)
     }
     @IBAction func noteEntered(_ sender: Any) {
         guard let set = set else { return }
-        updateSetNote(set: set)
+        newSet = updateSetNote(set: set)
     }
     
     var exercise: Exercise?
     var set: Sets?
+    var newExercise: Exercise?
+    var newSet: Sets?
     
     override func prepareForReuse() {
         weightTextField.text = ""
