@@ -15,6 +15,8 @@
 		4D1520BD1F01AD35000A1E79 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520BC1F01AD35000A1E79 /* Stopwatch.swift */; };
 		4D1520BF1F01B3BF000A1E79 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520BE1F01B3BF000A1E79 /* CustomTabBarView.swift */; };
 		4D1520C11F01B6F2000A1E79 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520C01F01B6F2000A1E79 /* CustomTabBarController.swift */; };
+		4D1520C31F02DAD8000A1E79 /* Measurement+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520C21F02DAD8000A1E79 /* Measurement+Convenience.swift */; };
+		4D1520C51F02DAF4000A1E79 /* Progress+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520C41F02DAF4000A1E79 /* Progress+Convenience.swift */; };
 		4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */; };
 		4DCCDA211EDC9249002BB5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */; };
 		4DCCDA231EDC9249002BB5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 		4D1520BC1F01AD35000A1E79 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		4D1520BE1F01B3BF000A1E79 /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		4D1520C01F01B6F2000A1E79 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		4D1520C21F02DAD8000A1E79 /* Measurement+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Measurement+Convenience.swift"; sourceTree = "<group>"; };
+		4D1520C41F02DAF4000A1E79 /* Progress+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Progress+Convenience.swift"; sourceTree = "<group>"; };
 		4DCCDA181EDC9249002BB5E6 /* WorkoutLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DCCDA201EDC9249002BB5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				4DCCDA3D1EDCAFC0002BB5E6 /* Day+Convenience.swift */,
 				4DCCDA3F1EDCB2F4002BB5E6 /* Routine+Convenience.swift */,
 				4D1520BC1F01AD35000A1E79 /* Stopwatch.swift */,
+				4D1520C21F02DAD8000A1E79 /* Measurement+Convenience.swift */,
+				4D1520C41F02DAF4000A1E79 /* Progress+Convenience.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 				4DCCDA531EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift in Sources */,
 				4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */,
 				4DCCDA4E1EDCD111002BB5E6 /* CreateDayTableViewController.swift in Sources */,
+				4D1520C31F02DAD8000A1E79 /* Measurement+Convenience.swift in Sources */,
 				4D15207E1EFC8115000A1E79 /* Theme.swift in Sources */,
 				4D1520BD1F01AD35000A1E79 /* Stopwatch.swift in Sources */,
 				4DCCDA4C1EDCCB71002BB5E6 /* DayListTableViewController.swift in Sources */,
@@ -282,6 +289,7 @@
 				4DCCDA511EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift in Sources */,
 				4D1520801EFC9025000A1E79 /* ProgressPhotoViewController.swift in Sources */,
 				4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */,
+				4D1520C51F02DAF4000A1E79 /* Progress+Convenience.swift in Sources */,
 				4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */,
 				4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */,
 				4DCCDA5B1EDF5267002BB5E6 /* Set+Convenience.swift in Sources */,
