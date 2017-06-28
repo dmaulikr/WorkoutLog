@@ -32,6 +32,7 @@ class CustomTabBarController: UITabBarController, CustomTabBarViewDelegate {
         
         view.addSubview(tabView)
         
+        selectedIndex = 1
     }
 
     func tabBarButtonTapped(at index: Int) {

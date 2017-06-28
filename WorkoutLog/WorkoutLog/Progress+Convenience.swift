@@ -6,10 +6,18 @@
 //  Copyright © 2017 Colton. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import CoreData
 
 extension Progress {
+    
+    var image: UIImage {
+        guard let photo = photo else { return UIImage() }
+        guard let image = UIImage(data: photo as Data) else { return UIImage() }
+        return image
+    }
+    
     convenience init(photo: NSData,
                      date: NSDate,
                      weight: Double,

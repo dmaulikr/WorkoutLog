@@ -35,6 +35,23 @@ class CustomTabBarView: UIView {
         button0.tag = 0
         button1.tag = 1
         button2.tag = 2
+        addSubview(button0)
+        addSubview(button1)
+        addSubview(button2)
+        
+        imageView0.image = UIImage(named: "camera-7")
+        imageView1.image = UIImage(named: "dumbbell-7")
+        imageView2.image = UIImage(named: "clock-stopwatch-7")
+        addSubview(imageView0)
+        addSubview(imageView1)
+        addSubview(imageView2)
+        
+        label0.text = "Progress"
+        label1.text = "Workout Log"
+        label2.text = "Stopwatch"
+        addSubview(label0)
+        addSubview(label1)
+        addSubview(label2)
         
         button0.addTarget(self, action: #selector(didTap(sender:)), for: .touchUpInside)
         button1.addTarget(self, action: #selector(didTap(sender:)), for: .touchUpInside)

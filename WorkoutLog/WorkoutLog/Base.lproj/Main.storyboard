@@ -263,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vwk-V6-9jb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2426" y="309"/>
+            <point key="canvasLocation" x="2425" y="394"/>
         </scene>
         <!--Edit Day-->
         <scene sceneID="l2e-oQ-cyk">
@@ -327,7 +327,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iru-Bp-nOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3743" y="757"/>
+            <point key="canvasLocation" x="3521" y="789"/>
         </scene>
         <!--Create Day-->
         <scene sceneID="52y-Xc-frp">
@@ -442,7 +442,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQZ-4G-bsZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2316" y="-457"/>
+            <point key="canvasLocation" x="2425" y="-464"/>
         </scene>
         <!--Workout Log-->
         <scene sceneID="Lch-iV-5Ng">
@@ -464,10 +464,10 @@
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="-2.2488755622188905"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="FcB-Wn-OhQ">
             <objects>
-                <tabBarController id="Ke8-Lp-va6" sceneMemberID="viewController">
+                <tabBarController id="Ke8-Lp-va6" customClass="CustomTabBarController" customModule="WorkoutLog" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Q4Y-yq-qsB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -495,52 +495,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TapToAddImage" translatesAutoresizingMaskIntoConstraints="NO" id="k4F-FT-J9h">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TapToAddImage" translatesAutoresizingMaskIntoConstraints="NO" id="k4F-FT-J9h">
                                 <rect key="frame" x="16" y="28" width="343" height="415"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="415" id="19F-kN-RL7"/>
+                                </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Y4W-PD-fCh" appends="YES" id="HmA-4H-mJ4"/>
-                                    <outletCollection property="gestureRecognizers" destination="MIJ-pb-Vgg" appends="YES" id="uZN-qT-EPF"/>
+                                    <outletCollection property="gestureRecognizers" destination="2L1-Hm-vPU" appends="YES" id="NT1-9t-npo"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbf-o7-Ns5">
-                                <rect key="frame" x="151" y="451" width="72" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RyE-C5-kA6">
-                                <rect key="frame" x="139" y="480" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.90733188390731812" green="0.29692479968070984" blue="0.23667055368423462" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wF-8D-TWP">
-                                <rect key="frame" x="66" y="561" width="242" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Tap To Add Measurements">
-                                    <color key="titleColor" red="0.17263332009315491" green="0.24162840843200684" blue="0.31184014678001404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vA-r3-GIK">
-                                <rect key="frame" x="164" y="518" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.17263332009315491" green="0.24162840843200684" blue="0.31184014678001404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="oPp-fi-G6r">
+                                <rect key="frame" x="16" y="451" width="343" height="126.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbf-o7-Ns5">
+                                        <rect key="frame" x="144.5" y="0.0" width="54" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RyE-C5-kA6">
+                                        <rect key="frame" x="134" y="42.5" width="75" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="75" id="eyg-Pn-yvS"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.90733188390731812" green="0.29692479968070984" blue="0.23667055368423462" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vA-r3-GIK">
+                                        <rect key="frame" x="144.5" y="86.5" width="54" height="40"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="0.17263332009315491" green="0.24162840843200684" blue="0.31184014678001404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="Tcd-VG-f54" eventType="touchUpInside" id="It7-dq-VE9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oPp-fi-G6r" firstAttribute="leading" secondItem="Eld-Fx-nex" secondAttribute="leadingMargin" id="91b-hl-hJ4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oPp-fi-G6r" secondAttribute="trailing" id="En3-SX-mJp"/>
+                            <constraint firstItem="oPp-fi-G6r" firstAttribute="top" secondItem="k4F-FT-J9h" secondAttribute="bottom" constant="8" id="Hd6-wu-5uh"/>
+                            <constraint firstItem="k4F-FT-J9h" firstAttribute="leading" secondItem="Eld-Fx-nex" secondAttribute="leadingMargin" id="SH6-kh-4Nw"/>
+                            <constraint firstItem="k4F-FT-J9h" firstAttribute="trailing" secondItem="Eld-Fx-nex" secondAttribute="trailingMargin" id="ahE-Qv-6zO"/>
+                            <constraint firstItem="k4F-FT-J9h" firstAttribute="top" secondItem="wyS-My-tG9" secondAttribute="bottom" constant="8" id="lht-8s-UDx"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Progress" image="camera-7" selectedImage="camera-7" id="zuB-US-evi"/>
+                    <connections>
+                        <outlet property="progressPhotoImageView" destination="k4F-FT-J9h" id="FLH-hJ-tRE"/>
+                        <outlet property="weightTextField" destination="RyE-C5-kA6" id="ca4-PB-B59"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLY-6X-2do" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Y4W-PD-fCh"/>
-                <tapGestureRecognizer id="MIJ-pb-Vgg"/>
+                <tapGestureRecognizer id="2L1-Hm-vPU">
+                    <connections>
+                        <action selector="tapToPickImage:" destination="Tcd-VG-f54" id="s5j-XY-eAh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="244" y="840.62968515742136"/>
         </scene>
