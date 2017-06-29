@@ -32,6 +32,8 @@ class CustomTabBarView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        backgroundColor = UIColor.exerciseDarkBlue
+        
         button0.tag = 0
         button1.tag = 1
         button2.tag = 2

@@ -464,10 +464,10 @@
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="-2.2488755622188905"/>
         </scene>
-        <!--Custom Tab Bar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="FcB-Wn-OhQ">
             <objects>
-                <tabBarController id="Ke8-Lp-va6" customClass="CustomTabBarController" customModule="WorkoutLog" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Ke8-Lp-va6" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Q4Y-yq-qsB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

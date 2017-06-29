@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ExerciseTableViewCellDelegate {
+    func startTextFieldEnter(sender: Any)
+}
+
 class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     //MARK: - Outlets and Actions
@@ -19,6 +23,7 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var noteTextField: UITextField!
     
     @IBAction func weightEntered(_ sender: Any) {
+        delegate?.startTextFieldEnter(sender: self)
         guard let set = set,
             let exercise = exercise else { return }
         newSet = updateSetWeight(set: set)
@@ -28,10 +33,12 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
         }
     }
     @IBAction func repsEntered(_ sender: Any) {
+        delegate?.startTextFieldEnter(sender: self)
         guard let set = set else { return }
         newSet = updateSetReps(set: set)
     }
     @IBAction func noteEntered(_ sender: Any) {
+        delegate?.startTextFieldEnter(sender: self)
         guard let set = set else { return }
         newSet = updateSetNote(set: set)
     }
@@ -40,6 +47,7 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
     var set: Sets?
     var newExercise: Exercise?
     var newSet: Sets?
+    var delegate: ExerciseTableViewCellDelegate?
     
     override func prepareForReuse() {
         weightTextField.text = ""

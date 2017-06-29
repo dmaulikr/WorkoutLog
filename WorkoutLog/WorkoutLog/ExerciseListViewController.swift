@@ -18,6 +18,8 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         tableView.dataSource = self
         tableView.delegate = self
         
+        
+        
     }
     
     // MARK: - Internal Properties
@@ -33,6 +35,7 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
     }
     var exercises: [Exercise]?
     var selectedExercise: Exercise?
+    var button: UIButton?
     
     // MARK Section Header Methods
     
@@ -59,11 +62,12 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         
         //Add button to header view
         let button = UIButton(frame: CGRect(x: tableView.frame.width - (header.frame.height + 10), y: 0, width: header.frame.height, height: header.frame.height))
+        
+        self.button = button
         button.tag = section
         
-        button.setImage(UIImage(named: "checkmarkBlue"), for: UIControlState.normal)
+        button.setImage(#imageLiteral(resourceName: "checkmarkBlue"), for: UIControlState.normal)
         
-        guard let exercise = exercises?[section] else { return }
         button.addTarget(self, action: #selector(saveExercise(sender:)), for: .touchUpInside)
         
         header.addSubview(button)
@@ -71,6 +75,7 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
     
     func saveExercise(sender: Any?) {
         guard let button = sender as? UIButton else { return }
+        button.setImage(#imageLiteral(resourceName: "checkmarkBlue"), for: UIControlState.normal)
         guard let exercises = exercises else { return }
         let exercise = exercises[button.tag]
         ExerciseController.shared.updatedExercise(exercise: exercise)
@@ -106,6 +111,9 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         guard let set = sets?[indexPath.row] as? Sets else { return cell }
         
         cell.updateViews(set: set, exercise: exercise)
+        
+        cell.delegate = self
+        
         return cell
     }
     
@@ -134,4 +142,12 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
 
+}
+
+extension ExerciseListViewController: ExerciseTableViewCellDelegate {
+    func startTextFieldEnter(sender: Any) {
+        button?.setImage(#imageLiteral(resourceName: "checkmarkOrange"), for: .normal)
+        
+        //tableView.reloadData()
+    }
 }
