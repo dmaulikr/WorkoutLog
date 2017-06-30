@@ -8,18 +8,24 @@
 
 import UIKit
 
+//MARK: - Protocols
+
+protocol CheckmarkButtonTappedDelegate {
+    func checkmarkButtonTapped(sender: Any)
+}
+
 class ExerciseListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //MARK: - Outlets and Actions
     @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         tableView.dataSource = self
         tableView.delegate = self
-        
-        
-        
     }
     
     // MARK: - Internal Properties
@@ -36,6 +42,7 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
     var exercises: [Exercise]?
     var selectedExercise: Exercise?
     var button: UIButton?
+    var delegate: CheckmarkButtonTappedDelegate?
     
     // MARK Section Header Methods
     
@@ -76,6 +83,7 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
     func saveExercise(sender: Any?) {
         guard let button = sender as? UIButton else { return }
         button.setImage(#imageLiteral(resourceName: "checkmarkBlue"), for: UIControlState.normal)
+        delegate?.checkmarkButtonTapped(sender: self)
         guard let exercises = exercises else { return }
         let exercise = exercises[button.tag]
         ExerciseController.shared.updatedExercise(exercise: exercise)
@@ -110,7 +118,7 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         
         guard let set = sets?[indexPath.row] as? Sets else { return cell }
         
-        cell.updateViews(set: set, exercise: exercise)
+        cell.updateViews(set: set, exercise: exercise, VC: self)
         
         cell.delegate = self
         
@@ -141,13 +149,14 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
             destinationVC.day = day
         }
     }
-
 }
+
+//MARK: - ExerciseTableViewCellDelegate Methods
 
 extension ExerciseListViewController: ExerciseTableViewCellDelegate {
     func startTextFieldEnter(sender: Any) {
         button?.setImage(#imageLiteral(resourceName: "checkmarkOrange"), for: .normal)
-        
+
         //tableView.reloadData()
     }
 }

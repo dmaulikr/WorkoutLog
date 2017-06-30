@@ -12,24 +12,40 @@ class ProgressPhotoViewController: UIViewController, UIGestureRecognizerDelegate
     
     @IBOutlet weak var progressPhotoImageView: UIImageView!
     @IBOutlet weak var weightTextField: UITextField!
+    @IBOutlet weak var savedLabel: UILabel!
     
     @IBAction func tapToPickImage(_ sender: Any) {
         getImage()
     }
 
-//    @IBAction func saveButtonTapped(_ sender: Any) {
-//        if (progressPhotoImageView.image != nil) && progressPhotoImageView.image != UIImage(named: "TapToAddImage") {
-//            if let weight = weightTextField.text {
-//                guard let weightDouble = Double(weight) else { return }
-//                ProgressController.shared.createProgressWithPhotoAndWeight(photo: progressPhotoImageView.image, weight: weightDouble)
-//            }
-//        }
-//    }
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+        if progressPhotoImageView.image == UIImage(named: "TapToAddImage") {
+            let photo = progressPhotoImageView.image ?? UIImage()
+            guard let weight = weightTextField.text, !weight.isEmpty else { return }
+            guard let doubleWeight = Double(weight) else { return }
+            ProgressController.shared.createProgressWithPhotoAndWeight(photo: photo, weight: doubleWeight)
+        }
+        
+        progressPhotoImageView.image = UIImage(named: "TapToAddImage")
+        weightTextField.text = ""
+        
+        savedLabel.isHidden = false
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(endTimer), userInfo: nil, repeats: true)
+    }
+    
+    func endTimer() {
+        savedLabel.isHidden = true
+        timer.invalidate()
+    }
+    
+    var timer: Timer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
-        
+        savedLabel.isHidden = true
+        savedLabel.textColor = UIColor.exerciseOrange
     }
     
     func getImage() {

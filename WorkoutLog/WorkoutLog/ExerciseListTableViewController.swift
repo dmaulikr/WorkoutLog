@@ -81,7 +81,7 @@ class ExerciseListTableViewController: UITableViewController, EditedDayDelegate 
         
         guard let set = sets?[indexPath.row] as? Sets else { return cell }
         
-        cell.updateViews(set: set, exercise: exercise)
+        cell.updateViews(set: set, exercise: exercise, VC: self)
         return cell
     }
     
