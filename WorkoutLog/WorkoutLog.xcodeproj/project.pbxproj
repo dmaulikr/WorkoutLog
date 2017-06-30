@@ -20,6 +20,7 @@
 		4D1520C71F02F2BF000A1E79 /* MeasurementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520C61F02F2BF000A1E79 /* MeasurementController.swift */; };
 		4D1520C91F02F2CB000A1E79 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520C81F02F2CB000A1E79 /* ProgressController.swift */; };
 		4D1521311F05BA1D000A1E79 /* NewStopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */; };
+		4D1521741F06F218000A1E79 /* ProgressHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1521731F06F218000A1E79 /* ProgressHistoryViewController.swift */; };
 		4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */; };
 		4DCCDA211EDC9249002BB5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */; };
 		4DCCDA231EDC9249002BB5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		4D1520C61F02F2BF000A1E79 /* MeasurementController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementController.swift; sourceTree = "<group>"; };
 		4D1520C81F02F2CB000A1E79 /* ProgressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStopwatchViewController.swift; sourceTree = "<group>"; };
+		4D1521731F06F218000A1E79 /* ProgressHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHistoryViewController.swift; sourceTree = "<group>"; };
 		4DCCDA181EDC9249002BB5E6 /* WorkoutLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DCCDA201EDC9249002BB5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				4D1520BA1F019251000A1E79 /* StopwatchViewController.swift */,
 				4D1520C01F01B6F2000A1E79 /* CustomTabBarController.swift */,
 				4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */,
+				4D1521731F06F218000A1E79 /* ProgressHistoryViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				4D1520C71F02F2BF000A1E79 /* MeasurementController.swift in Sources */,
 				4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */,
 				4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */,
+				4D1521741F06F218000A1E79 /* ProgressHistoryViewController.swift in Sources */,
 				4DCCDA5B1EDF5267002BB5E6 /* Set+Convenience.swift in Sources */,
 				4DCCDA3E1EDCAFC0002BB5E6 /* Day+Convenience.swift in Sources */,
 				4D1520C11F01B6F2000A1E79 /* CustomTabBarController.swift in Sources */,
