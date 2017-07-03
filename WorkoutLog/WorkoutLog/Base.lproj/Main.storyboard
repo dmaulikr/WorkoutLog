@@ -125,7 +125,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="142"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VIM-Qr-XHf" id="dXK-sl-qsO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="141.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nrZ-CK-2ou">
@@ -473,10 +473,10 @@
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="-2.2488755622188905"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="FcB-Wn-OhQ">
             <objects>
-                <tabBarController id="Ke8-Lp-va6" sceneMemberID="viewController">
+                <tabBarController id="Ke8-Lp-va6" customClass="CustomTabBarController" customModule="WorkoutLog" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Q4Y-yq-qsB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -524,10 +524,10 @@
                                 </constraints>
                             </view>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TapToAddImage" translatesAutoresizingMaskIntoConstraints="NO" id="k4F-FT-J9h">
-                                <rect key="frame" x="17" y="195" width="343" height="415"/>
+                                <rect key="frame" x="17" y="120" width="343" height="490"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="415" id="19F-kN-RL7"/>
+                                    <constraint firstAttribute="height" constant="490" id="a3d-eT-DSB"/>
                                     <constraint firstAttribute="width" constant="343" id="qvN-cC-4uy"/>
                                 </constraints>
                                 <connections>
@@ -535,7 +535,7 @@
                                 </connections>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Ypd-AL-QOq">
-                                <rect key="frame" x="95" y="119" width="184" height="40"/>
+                                <rect key="frame" x="95" y="72" width="184" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Weight.." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RyE-C5-kA6">
                                         <rect key="frame" x="0.0" y="0.0" width="74.5" height="40"/>
@@ -554,18 +554,20 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9Ui-8g-znT"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.92469829319999997" green="0.94251453880000002" blue="0.94536954159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="k4F-FT-J9h" firstAttribute="top" secondItem="Ypd-AL-QOq" secondAttribute="bottom" constant="36" id="73c-tz-L9h"/>
+                            <constraint firstItem="k4F-FT-J9h" firstAttribute="top" secondItem="Ypd-AL-QOq" secondAttribute="bottom" constant="8" id="7ON-5e-541"/>
                             <constraint firstItem="pwS-bn-jhE" firstAttribute="centerY" secondItem="Eld-Fx-nex" secondAttribute="centerY" id="9BT-m3-kSH"/>
                             <constraint firstItem="k4F-FT-J9h" firstAttribute="leading" secondItem="Eld-Fx-nex" secondAttribute="leading" constant="17" id="9tq-Mg-ydT"/>
                             <constraint firstAttribute="trailing" secondItem="k4F-FT-J9h" secondAttribute="trailing" constant="15" id="E8o-Nl-LwE"/>
-                            <constraint firstItem="O6h-OG-kGh" firstAttribute="top" secondItem="k4F-FT-J9h" secondAttribute="bottom" constant="8" id="Rk3-Bu-Eh4"/>
+                            <constraint firstItem="Ypd-AL-QOq" firstAttribute="top" secondItem="wyS-My-tG9" secondAttribute="bottom" constant="8" id="EXy-gQ-XN4"/>
                             <constraint firstItem="Ypd-AL-QOq" firstAttribute="leading" secondItem="Eld-Fx-nex" secondAttribute="leadingMargin" constant="79" id="S0e-DG-ol5"/>
                             <constraint firstItem="pwS-bn-jhE" firstAttribute="centerX" secondItem="Eld-Fx-nex" secondAttribute="centerX" id="Y72-bw-g2C"/>
-                            <constraint firstItem="Ypd-AL-QOq" firstAttribute="top" secondItem="wyS-My-tG9" secondAttribute="bottom" constant="55" id="wWd-ej-Trh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ypd-AL-QOq" secondAttribute="trailing" constant="80" id="yl3-Zf-e2U"/>
                         </constraints>
                     </view>
@@ -687,10 +689,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KI2-Yr-Vkz">
-                                <rect key="frame" x="94" y="167" width="186" height="62.5"/>
+                                <rect key="frame" x="78.5" y="167" width="218.5" height="62.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzP-60-aFr">
-                                        <rect key="frame" x="0.0" y="0.0" width="186" height="62.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="218.5" height="62.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="52"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -700,9 +702,8 @@
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="KI2-Yr-Vkz" firstAttribute="leading" secondItem="0gB-Nb-bFk" secondAttribute="leadingMargin" constant="78" id="4XV-Dk-c4L"/>
+                            <constraint firstItem="KI2-Yr-Vkz" firstAttribute="centerX" secondItem="0gB-Nb-bFk" secondAttribute="centerX" id="2kC-wC-RZi"/>
                             <constraint firstItem="KI2-Yr-Vkz" firstAttribute="top" secondItem="Ulg-7b-86n" secondAttribute="bottom" constant="147" id="Cpd-ip-3o4"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KI2-Yr-Vkz" secondAttribute="trailing" constant="79" id="flP-fa-RxE"/>
                             <constraint firstItem="BsJ-L5-IZX" firstAttribute="top" secondItem="KI2-Yr-Vkz" secondAttribute="bottom" constant="388.5" id="p6l-9d-DBl"/>
                         </constraints>
                         <connections>

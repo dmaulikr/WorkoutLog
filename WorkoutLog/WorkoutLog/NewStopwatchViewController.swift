@@ -11,7 +11,7 @@ import UIKit
 class NewStopwatchViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
-    
+
     var startTime = TimeInterval()
     
     var timer: Timer = Timer()

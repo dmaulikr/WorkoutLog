@@ -12,7 +12,6 @@ class StopwatchViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
 
-    
     var counter = 00.00
     var minuteCounter = 00
     var timer = Timer()
@@ -31,14 +30,14 @@ class StopwatchViewController: UIViewController {
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
         
-        timeLabel.text = "\(counter)"
+        timeLabel.text = "00:00.00"
 
 
         view.backgroundColor = UIColor.exerciseLightBlue
         timeLabel.textColor = UIColor.exerciseWhite
     }
     
-    func updateElapsedTimeLabel(timer: Timer) {
+    func updateElapsedTimeLabel() {
             let minutes = Int(watch.elapsedTime/60)
             let seconds = Int(watch.elapsedTime .truncatingRemainder(dividingBy: 60))
             let tensOfSeconds = Int(watch.elapsedTime * 10 .truncatingRemainder(dividingBy: 10))
@@ -50,8 +49,8 @@ class StopwatchViewController: UIViewController {
             timer.invalidate()
             isPlaying = false
         } else {
-            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-            updateElapsedTimeLabel(timer: timer)
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateElapsedTimeLabel), userInfo: nil, repeats: true)
+            //updateElapsedTimeLabel()
             isPlaying = true
         }
     }
@@ -59,20 +58,20 @@ class StopwatchViewController: UIViewController {
     func doubleTapped() {
         isPlaying = false
         timer.invalidate()
-        counter = 00.00
-        timeLabel.text = "\(counter)"
+//        counter = 00.00
+        timeLabel.text = "00:00.00"
     }
     
-    func updateTimer() {
-        if counter >= 60 {
-            minuteCounter += 1
-
-            counter = 00.00
-        }
-        counter = counter + 0.1
-        timeLabel.text = String(format: "%0.1f", counter)
-        
-    }
+//    func updateTimer() {
+//        if counter >= 60 {
+//            minuteCounter += 1
+//
+//            counter = 00.00
+//        }
+//        counter = counter + 0.1
+//        timeLabel.text = String(format: "%0.1f", counter)
+//        
+//    }
     
 }
 
