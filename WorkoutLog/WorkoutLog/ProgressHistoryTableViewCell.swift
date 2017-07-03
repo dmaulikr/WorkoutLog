@@ -17,9 +17,20 @@ class ProgressHistoryTableViewCell: UITableViewCell {
     func updateViews(progress: Progress) {
         progressImage.image = progress.image
         guard let date = progress.date else { return }
+        let dateString = formatDate(date: date)
         
-        dateLabel.text = "\(date)"
-        weightLabel.text = "\(progress.weight)"
+        dateLabel.text = dateString
+        weightLabel.text = "Weight: \(progress.weight)"
+        
+        dateLabel.textColor = UIColor.exerciseDarkBlue
+        weightLabel.textColor = UIColor.exerciseDarkBlue
+    }
+    
+    func formatDate(date: NSDate) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd,yyyy"
+        let dateString = formatter.string(from: date as Date)
+        return dateString
     }
 
 }
