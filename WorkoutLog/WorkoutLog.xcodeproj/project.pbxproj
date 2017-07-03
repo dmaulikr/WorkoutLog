@@ -21,6 +21,7 @@
 		4D1520C91F02F2CB000A1E79 /* ProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520C81F02F2CB000A1E79 /* ProgressController.swift */; };
 		4D1521311F05BA1D000A1E79 /* NewStopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */; };
 		4D1521741F06F218000A1E79 /* ProgressHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1521731F06F218000A1E79 /* ProgressHistoryViewController.swift */; };
+		4D1521761F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1521751F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift */; };
 		4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */; };
 		4DCCDA211EDC9249002BB5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */; };
 		4DCCDA231EDC9249002BB5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		4D1520C81F02F2CB000A1E79 /* ProgressController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressController.swift; sourceTree = "<group>"; };
 		4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStopwatchViewController.swift; sourceTree = "<group>"; };
 		4D1521731F06F218000A1E79 /* ProgressHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHistoryViewController.swift; sourceTree = "<group>"; };
+		4D1521751F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		4DCCDA181EDC9249002BB5E6 /* WorkoutLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DCCDA201EDC9249002BB5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				4DCCDA501EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift */,
 				4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */,
 				4D1520BE1F01B3BF000A1E79 /* CustomTabBarView.swift */,
+				4D1521751F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				4DCCDA531EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift in Sources */,
 				4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */,
 				4DCCDA4E1EDCD111002BB5E6 /* CreateDayTableViewController.swift in Sources */,
+				4D1521761F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift in Sources */,
 				4D1520C31F02DAD8000A1E79 /* Measurement+Convenience.swift in Sources */,
 				4D15207E1EFC8115000A1E79 /* Theme.swift in Sources */,
 				4D1520BD1F01AD35000A1E79 /* Stopwatch.swift in Sources */,

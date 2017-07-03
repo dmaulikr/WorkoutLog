@@ -18,7 +18,7 @@ class ProgressController {
     
     //MARK: - Internal Properties
     
-    var Progresses: [Progress] {
+    var progresses: [Progress] {
         let request: NSFetchRequest<Progress> = Progress.fetchRequest()
         let moc = CoreDataStack.context
         do {
@@ -31,12 +31,11 @@ class ProgressController {
     
     //MARK: - CRUD
     
-    func createProgressWithPhotoAndWeight(photo: UIImage, weight: Double) -> Progress {
+    func createProgressWithPhotoAndWeight(photo: UIImage, weight: Double) {
         let date = NSDate()
         let photoData = UIImagePNGRepresentation(photo)! as NSData
-        let progress = Progress(photo: photoData, date: date, weight: weight, context: CoreDataStack.context)
+        _ = Progress(photo: photoData, date: date, weight: weight, context: CoreDataStack.context)
         saveToPersistentStorage()
-        return progress
     }
     
 //    func createProgressWithPhotoOnly(photo: UIImage) -> Progress {

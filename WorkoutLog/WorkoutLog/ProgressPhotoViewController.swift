@@ -20,7 +20,7 @@ class ProgressPhotoViewController: UIViewController, UIGestureRecognizerDelegate
 
     @IBAction func saveButtonTapped(_ sender: Any) {
         
-        if progressPhotoImageView.image == UIImage(named: "TapToAddImage") {
+        if progressPhotoImageView.image != UIImage(named: "TapToAddImage") {
             let photo = progressPhotoImageView.image ?? UIImage()
             guard let weight = weightTextField.text, !weight.isEmpty else { return }
             guard let doubleWeight = Double(weight) else { return }
