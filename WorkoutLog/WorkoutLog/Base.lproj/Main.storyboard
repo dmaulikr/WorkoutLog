@@ -754,15 +754,15 @@
                                     <constraint firstAttribute="height" constant="76" id="LbF-hD-YNt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.17263332009999999" green="0.24162840839999999" blue="0.3118401468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UJe-cy-lzb">
-                                <rect key="frame" x="116" y="348" width="143" height="170"/>
+                                <rect key="frame" x="116" y="348" width="143" height="198"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTY-n9-TCs">
-                                        <rect key="frame" x="0.0" y="0.0" width="143" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <state key="normal" title="0:30">
                                             <color key="titleColor" red="0.17263332009999999" green="0.24162840839999999" blue="0.3118401468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -771,8 +771,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCQ-zN-Klc">
-                                        <rect key="frame" x="0.0" y="45" width="143" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <rect key="frame" x="0.0" y="52" width="143" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <state key="normal" title="1:00">
                                             <color key="titleColor" red="0.17263332009999999" green="0.24162840839999999" blue="0.3118401468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -781,8 +781,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWc-Zh-c0H">
-                                        <rect key="frame" x="0.0" y="90" width="143" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <rect key="frame" x="0.0" y="104" width="143" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <state key="normal" title="2:00">
                                             <color key="titleColor" red="0.17263332009999999" green="0.24162840839999999" blue="0.3118401468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -791,8 +791,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04u-3b-7OC">
-                                        <rect key="frame" x="0.0" y="135" width="143" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <rect key="frame" x="0.0" y="156" width="143" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <state key="normal" title="3:00">
                                             <color key="titleColor" red="0.17263332009999999" green="0.24162840839999999" blue="0.3118401468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -802,9 +802,17 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2y-NW-CxE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" red="0.17263332009999999" green="0.24162840839999999" blue="0.3118401468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="EJV-Tr-2gc"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="P2y-NW-CxE" secondAttribute="trailing" id="2ob-3o-Czf"/>
                             <constraint firstItem="PeM-mI-oXs" firstAttribute="leading" secondItem="HQl-pd-VdG" secondAttribute="leadingMargin" constant="22" id="BC2-3p-PQN"/>
                             <constraint firstItem="UJe-cy-lzb" firstAttribute="leading" secondItem="HQl-pd-VdG" secondAttribute="leadingMargin" constant="100" id="KHb-6H-Jo1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7I9-er-7Eb" secondAttribute="trailing" constant="77" id="Noa-WV-3j2"/>
@@ -814,10 +822,13 @@
                             <constraint firstItem="7I9-er-7Eb" firstAttribute="leading" secondItem="HQl-pd-VdG" secondAttribute="leadingMargin" constant="76" id="gOi-Qj-WI2"/>
                             <constraint firstItem="7I9-er-7Eb" firstAttribute="top" secondItem="en2-8W-AQm" secondAttribute="bottom" constant="120" id="gXK-FW-12i"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UJe-cy-lzb" secondAttribute="trailing" constant="100" id="hhu-f0-c5X"/>
+                            <constraint firstItem="P2y-NW-CxE" firstAttribute="top" secondItem="HQl-pd-VdG" secondAttribute="top" id="ksL-ai-umk"/>
+                            <constraint firstItem="P2y-NW-CxE" firstAttribute="leading" secondItem="HQl-pd-VdG" secondAttribute="leading" id="wNT-10-VZm"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="clock-stopwatch-7" selectedImage="clock-stopwatch-7" id="OMc-qf-WSQ"/>
                     <connections>
+                        <outlet property="statusBarView" destination="P2y-NW-CxE" id="POd-Uw-gxy"/>
                         <outlet property="timeLabel" destination="7I9-er-7Eb" id="WaV-D4-oE4"/>
                     </connections>
                 </viewController>
@@ -852,4 +863,5 @@
         <image name="clock-stopwatch-7" width="29" height="30"/>
         <image name="dumbbell-7" width="30" height="30"/>
     </resources>
+    <color key="tintColor" red="0.90733188389999997" green="0.29692479970000002" blue="0.23667055370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
