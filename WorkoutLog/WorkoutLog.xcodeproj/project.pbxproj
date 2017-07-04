@@ -110,6 +110,28 @@
 			name = Appearance;
 			sourceTree = "<group>";
 		};
+		4D98009B1F0AE58700968CBB /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				4D1520BE1F01B3BF000A1E79 /* CustomTabBarView.swift */,
+				4D1520C01F01B6F2000A1E79 /* CustomTabBarController.swift */,
+				4D9800991F0AC52900968CBB /* XMSegmentedControl.swift */,
+			);
+			name = Tabbar;
+			sourceTree = "<group>";
+		};
+		4D98009C1F0AE5CD00968CBB /* Progress & Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				4D1521751F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift */,
+				4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */,
+				4D1520BA1F019251000A1E79 /* StopwatchViewController.swift */,
+				4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */,
+				4D1521731F06F218000A1E79 /* ProgressHistoryViewController.swift */,
+			);
+			name = "Progress & Stopwatch";
+			sourceTree = "<group>";
+		};
 		4DCCDA0F1EDC9249002BB5E6 = {
 			isa = PBXGroup;
 			children = (
@@ -190,11 +212,8 @@
 				4D1520B81F0182DC000A1E79 /* ExerciseListViewController.swift */,
 				4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */,
 				4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */,
-				4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */,
-				4D1520BA1F019251000A1E79 /* StopwatchViewController.swift */,
-				4D1520C01F01B6F2000A1E79 /* CustomTabBarController.swift */,
-				4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */,
-				4D1521731F06F218000A1E79 /* ProgressHistoryViewController.swift */,
+				4D98009B1F0AE58700968CBB /* Tabbar */,
+				4D98009C1F0AE5CD00968CBB /* Progress & Stopwatch */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -204,9 +223,6 @@
 			children = (
 				4DCCDA501EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift */,
 				4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */,
-				4D1520BE1F01B3BF000A1E79 /* CustomTabBarView.swift */,
-				4D1521751F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift */,
-				4D9800991F0AC52900968CBB /* XMSegmentedControl.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";

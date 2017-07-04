@@ -33,8 +33,8 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
             let exercise = exercise else { return }
         newSet = updateSetWeight(set: set)
         if newExercise == nil {
-            newExercise = ExerciseController.shared.updatedExercise(exercise: exercise)
-            newExercise?.addToSets(set)
+            //newExercise = ExerciseController.shared.updatedExercise(exercise: exercise)
+            //newExercise?.addToSets(set)
         }
     }
     @IBAction func repsEntered(_ sender: Any) {
@@ -74,7 +74,7 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
         self.set = set
         lastWeightLabel.text = "\(set.weight)"
         lastRepsLabel.text = "\(set.reps)"
-        noteTextField.placeholder = set.note
+        noteTextField.text = set.note
         savedLabel.isHidden = true
         
         guard let vc = VC as? ExerciseListViewController else { return }
@@ -138,7 +138,6 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
     }
     
 }
-
 
 //MARK: - CheckmarkButtonTappedDelegate Methods
 

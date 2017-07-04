@@ -36,10 +36,10 @@ class ExerciseController {
         return exercise
     }
     
-    func updatedExercise(exercise: Exercise) -> Exercise {
+    func updatedExercise(exercise: Exercise, setNumber: Int64) -> Exercise {
         if let name = exercise.name {
             let date = NSDate()
-            let updatedExercise = Exercise(name: name, date: date)
+            let updatedExercise = Exercise(name: name, initialSets: setNumber, date: date, context: CoreDataStack.context)
             return updatedExercise
         }
         saveToPersistentStorage()

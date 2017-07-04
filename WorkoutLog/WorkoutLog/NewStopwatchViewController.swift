@@ -11,7 +11,18 @@ import UIKit
 class NewStopwatchViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
-
+    @IBAction func circleButtonTapped(_ sender: Any) {
+        singleTapped()
+    }
+    @IBAction func thirtySecondButtonTapped(_ sender: Any) {
+    }
+    @IBAction func oneMinuteButtonTapped(_ sender: Any) {
+    }
+    @IBAction func twoMinuteButtonTapped(_ sender: Any) {
+    }
+    @IBAction func threeMinuteButtonTapped(_ sender: Any) {
+    }
+    
     var startTime = TimeInterval()
     
     var timer: Timer = Timer()
@@ -22,7 +33,7 @@ class NewStopwatchViewController: UIViewController {
         super.viewDidLoad()
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapped))
         singleTap.numberOfTapsRequired = 1
-        view.addGestureRecognizer(singleTap)
+        //view.addGestureRecognizer(singleTap)
     }
 
     func singleTapped() {
@@ -53,6 +64,6 @@ class NewStopwatchViewController: UIViewController {
         let strSeconds = String(format: "%02d", seconds)
         let strFraction = String(format: "%02d", fraction)
         
-        timeLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        timeLabel.text = "\(strMinutes):\(strSeconds).\(strFraction)"
     }
 }

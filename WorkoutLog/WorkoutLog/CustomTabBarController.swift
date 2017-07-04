@@ -41,7 +41,7 @@ class CustomTabBarController: UITabBarController, CustomTabBarViewDelegate, XMSe
         segmentedControl.backgroundColor = backgroundColor
         segmentedControl.highlightColor = highlightColor
         segmentedControl.tint = UIColor.exerciseWhite
-        segmentedControl.highlightTint = UIColor.exerciseWhite
+        segmentedControl.highlightTint = UIColor.exerciseDarkBlue
         
         segmentedControl.delegate = self
         

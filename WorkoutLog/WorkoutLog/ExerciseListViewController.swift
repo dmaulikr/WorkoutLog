@@ -84,9 +84,13 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         guard let button = sender as? UIButton else { return }
         button.setImage(#imageLiteral(resourceName: "checkmarkBlue"), for: UIControlState.normal)
         delegate?.checkmarkButtonTapped(sender: self)
-        guard let exercises = exercises else { return }
-        let exercise = exercises[button.tag]
-        ExerciseController.shared.updatedExercise(exercise: exercise)
+        guard let exercises = day?.exercises,
+        let exerciseArray = Array(exercises) as? [Exercise] else { return }
+        let exercise = exerciseArray[button.tag]
+        let sets = exercise.initialSets
+        
+        let updatedExercise = ExerciseController.shared.updatedExercise(exercise: exercise, setNumber: sets)
+        self.day?.addToExercises(updatedExercise)
     }
     
     // MARK: - Table view data source
@@ -96,7 +100,6 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
             let exercises = day.exercises else { return 0 }
         let exerciseArray = Array(exercises)
         guard let exercise = exerciseArray[section] as? Exercise else { return 0 }
-        
         return exercise.sets?.count ?? 0
     }
     
@@ -156,7 +159,5 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
 extension ExerciseListViewController: ExerciseTableViewCellDelegate {
     func startTextFieldEnter(sender: Any) {
         button?.setImage(#imageLiteral(resourceName: "checkmarkOrange"), for: .normal)
-
-        //tableView.reloadData()
     }
 }
