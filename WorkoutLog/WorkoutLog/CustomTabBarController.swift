@@ -36,12 +36,12 @@ class CustomTabBarController: UITabBarController, CustomTabBarViewDelegate, XMSe
         let icons = [UIImage(named: "camera-7")!, UIImage(named: "dumbbell-7")!, UIImage(named: "clock-stopwatch-7")!]
         let frame1 = CGRect(x: 0, y: self.view.frame.height - tabBarHeight, width: view.frame.width, height: tabBarHeight)
         
-        let segmentedControl = XMSegmentedControl(frame: frame1, segmentIcon: icons, selectedItemHighlightStyle: XMSelectedItemHighlightStyle.background)
+        let segmentedControl = XMSegmentedControl(frame: frame1, segmentIcon: icons, selectedItemHighlightStyle: XMSelectedItemHighlightStyle.bottomEdge)
         
         segmentedControl.backgroundColor = backgroundColor
         segmentedControl.highlightColor = highlightColor
         segmentedControl.tint = UIColor.exerciseWhite
-        segmentedControl.highlightTint = UIColor.exerciseDarkBlue
+        segmentedControl.highlightTint = UIColor.exerciseOrange
         
         segmentedControl.delegate = self
         
