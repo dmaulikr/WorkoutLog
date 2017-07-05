@@ -311,35 +311,6 @@
             </objects>
             <point key="canvasLocation" x="4220" y="55"/>
         </scene>
-        <!--Exercise History-->
-        <scene sceneID="BwD-Nw-EuB">
-            <objects>
-                <tableViewController id="pq6-tk-M3j" customClass="ExerciseHistoryTableViewController" customModule="WorkoutLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" sectionHeaderHeight="28" sectionFooterHeight="28" id="x9X-uu-6jO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseHistoryCell" rowHeight="131" id="9u4-RP-qpt">
-                                <rect key="frame" x="0.0" y="28" width="375" height="131"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9u4-RP-qpt" id="KsE-LV-7cW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="pq6-tk-M3j" id="6G5-n6-nMS"/>
-                            <outlet property="delegate" destination="pq6-tk-M3j" id="sOg-mU-KsY"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Exercise History" id="4D8-JL-JfR"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Iru-Bp-nOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4460" y="788.45577211394311"/>
-        </scene>
         <!--Create Day-->
         <scene sceneID="52y-Xc-frp">
             <objects>
@@ -570,6 +541,7 @@
                             <constraint firstAttribute="trailing" secondItem="k4F-FT-J9h" secondAttribute="trailing" constant="15" id="E8o-Nl-LwE"/>
                             <constraint firstItem="Ypd-AL-QOq" firstAttribute="top" secondItem="wyS-My-tG9" secondAttribute="bottom" constant="8" id="EXy-gQ-XN4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ypd-AL-QOq" secondAttribute="trailing" id="JEP-Hy-9C6"/>
+                            <constraint firstItem="O6h-OG-kGh" firstAttribute="top" secondItem="k4F-FT-J9h" secondAttribute="bottom" constant="8" id="Wxt-hd-KMb"/>
                             <constraint firstItem="pwS-bn-jhE" firstAttribute="centerX" secondItem="Eld-Fx-nex" secondAttribute="centerX" id="Y72-bw-g2C"/>
                             <constraint firstItem="Ypd-AL-QOq" firstAttribute="leading" secondItem="Eld-Fx-nex" secondAttribute="leadingMargin" id="vc7-Ue-fVx"/>
                         </constraints>
@@ -680,50 +652,6 @@
             </objects>
             <point key="canvasLocation" x="2607.1999999999998" y="840.62968515742136"/>
         </scene>
-        <!--Stopwatch-->
-        <scene sceneID="0At-Hg-KqM">
-            <objects>
-                <viewController id="TbK-sj-bkS" customClass="StopwatchViewController" customModule="WorkoutLog" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ulg-7b-86n"/>
-                        <viewControllerLayoutGuide type="bottom" id="BsJ-L5-IZX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0gB-Nb-bFk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KI2-Yr-Vkz">
-                                <rect key="frame" x="78.5" y="167" width="218.5" height="62.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzP-60-aFr">
-                                        <rect key="frame" x="0.0" y="0.0" width="218.5" height="62.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="52"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="KI2-Yr-Vkz" firstAttribute="centerX" secondItem="0gB-Nb-bFk" secondAttribute="centerX" id="2kC-wC-RZi"/>
-                            <constraint firstItem="KI2-Yr-Vkz" firstAttribute="top" secondItem="Ulg-7b-86n" secondAttribute="bottom" constant="147" id="Cpd-ip-3o4"/>
-                            <constraint firstItem="BsJ-L5-IZX" firstAttribute="top" secondItem="KI2-Yr-Vkz" secondAttribute="bottom" constant="388.5" id="p6l-9d-DBl"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="ORp-s1-zQe" appends="YES" id="Foq-t6-aKd"/>
-                        </connections>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" image="clock-stopwatch-7" selectedImage="clock-stopwatch-7" id="TzS-YD-63X"/>
-                    <connections>
-                        <outlet property="timeLabel" destination="WzP-60-aFr" id="QBi-vt-jDW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OKh-fV-ZnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="ORp-s1-zQe"/>
-            </objects>
-            <point key="canvasLocation" x="609" y="1675"/>
-        </scene>
         <!--Item-->
         <scene sceneID="XVA-vC-AVt">
             <objects>
@@ -742,7 +670,7 @@
                                     <constraint firstAttribute="width" constant="300" id="2Xn-fn-X32"/>
                                     <constraint firstAttribute="height" constant="300" id="U5D-lY-M5T"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="circle-template-zxrnawtb"/>
+                                <state key="normal" backgroundImage="updatedCircle"/>
                                 <connections>
                                     <action selector="circleButtonTapped:" destination="qQY-mN-Iwf" eventType="touchUpInside" id="cI2-dq-gDw"/>
                                 </connections>
@@ -810,7 +738,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92469829319999997" green="0.94251453880000002" blue="0.94536954159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="P2y-NW-CxE" secondAttribute="trailing" id="2ob-3o-Czf"/>
                             <constraint firstItem="PeM-mI-oXs" firstAttribute="leading" secondItem="HQl-pd-VdG" secondAttribute="leadingMargin" constant="22" id="BC2-3p-PQN"/>
@@ -859,9 +787,9 @@
     <resources>
         <image name="TapToAddImage" width="414" height="541"/>
         <image name="camera-7" width="30" height="30"/>
-        <image name="circle-template-zxrnawtb" width="600" height="600"/>
         <image name="clock-stopwatch-7" width="29" height="30"/>
         <image name="dumbbell-7" width="30" height="30"/>
+        <image name="updatedCircle" width="600" height="600"/>
     </resources>
     <color key="tintColor" red="0.90733188389999997" green="0.29692479970000002" blue="0.23667055370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

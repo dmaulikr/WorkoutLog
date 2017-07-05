@@ -11,7 +11,6 @@
 		4D15207E1EFC8115000A1E79 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15207D1EFC8115000A1E79 /* Theme.swift */; };
 		4D1520801EFC9025000A1E79 /* ProgressPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */; };
 		4D1520B91F0182DC000A1E79 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520B81F0182DC000A1E79 /* ExerciseListViewController.swift */; };
-		4D1520BB1F019251000A1E79 /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520BA1F019251000A1E79 /* StopwatchViewController.swift */; };
 		4D1520BD1F01AD35000A1E79 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520BC1F01AD35000A1E79 /* Stopwatch.swift */; };
 		4D1520BF1F01B3BF000A1E79 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520BE1F01B3BF000A1E79 /* CustomTabBarView.swift */; };
 		4D1520C11F01B6F2000A1E79 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520C01F01B6F2000A1E79 /* CustomTabBarController.swift */; };
@@ -45,6 +44,7 @@
 		4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */; };
 		4DCCDA5B1EDF5267002BB5E6 /* Set+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA5A1EDF5267002BB5E6 /* Set+Convenience.swift */; };
 		4DCCDA5D1EDF5309002BB5E6 /* SetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA5C1EDF5309002BB5E6 /* SetController.swift */; };
+		4DE0B4371F0D97B600DC7CE6 /* coins.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0B4361F0D973900DC7CE6 /* coins.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +52,6 @@
 		4D15207D1EFC8115000A1E79 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPhotoViewController.swift; sourceTree = "<group>"; };
 		4D1520B81F0182DC000A1E79 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
-		4D1520BA1F019251000A1E79 /* StopwatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		4D1520BC1F01AD35000A1E79 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		4D1520BE1F01B3BF000A1E79 /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		4D1520C01F01B6F2000A1E79 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDayTableViewController.swift; sourceTree = "<group>"; };
 		4DCCDA5A1EDF5267002BB5E6 /* Set+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+Convenience.swift"; sourceTree = "<group>"; };
 		4DCCDA5C1EDF5309002BB5E6 /* SetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetController.swift; sourceTree = "<group>"; };
+		4DE0B4361F0D973900DC7CE6 /* coins.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = coins.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,6 @@
 			children = (
 				4D1521751F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift */,
 				4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */,
-				4D1520BA1F019251000A1E79 /* StopwatchViewController.swift */,
 				4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */,
 				4D1521731F06F218000A1E79 /* ProgressHistoryViewController.swift */,
 			);
@@ -165,6 +164,7 @@
 		4DCCDA2D1EDC9253002BB5E6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4DE0B4351F0D94CD00DC7CE6 /* Music */,
 				4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */,
 				4DCCDA241EDC9249002BB5E6 /* LaunchScreen.storyboard */,
 				4DCCDA271EDC9249002BB5E6 /* Info.plist */,
@@ -227,6 +227,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		4DE0B4351F0D94CD00DC7CE6 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				4DE0B4361F0D973900DC7CE6 /* coins.m4a */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -287,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DE0B4371F0D97B600DC7CE6 /* coins.m4a in Resources */,
 				4DCCDA261EDC9249002BB5E6 /* LaunchScreen.storyboard in Resources */,
 				4DCCDA231EDC9249002BB5E6 /* Assets.xcassets in Resources */,
 				4DCCDA211EDC9249002BB5E6 /* Main.storyboard in Resources */,
@@ -317,7 +326,6 @@
 				4DCCDA3C1EDCACE1002BB5E6 /* Exercise+Convenience.swift in Sources */,
 				4DCCDA551EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift in Sources */,
 				4DCCDA481EDCBB23002BB5E6 /* RoutineController.swift in Sources */,
-				4D1520BB1F019251000A1E79 /* StopwatchViewController.swift in Sources */,
 				4DCCDA4A1EDCBF9B002BB5E6 /* RoutineTableViewController.swift in Sources */,
 				4D1520B91F0182DC000A1E79 /* ExerciseListViewController.swift in Sources */,
 				4DCCDA381EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld in Sources */,
@@ -465,6 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.colton.WorkoutLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -478,6 +487,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.colton.WorkoutLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

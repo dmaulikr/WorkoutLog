@@ -32,7 +32,7 @@ class CustomTabBarController: UITabBarController, CustomTabBarViewDelegate, XMSe
         let backgroundColor = UIColor.exerciseDarkBlue
         let highlightColor = UIColor.exerciseOrange
         
-        let titles = ["Progress", "Workout Log", "Stopwatch"]
+        //let titles = ["Progress", "Workout Log", "Stopwatch"]
         let icons = [UIImage(named: "camera-7")!, UIImage(named: "dumbbell-7")!, UIImage(named: "clock-stopwatch-7")!]
         let frame1 = CGRect(x: 0, y: self.view.frame.height - tabBarHeight, width: view.frame.width, height: tabBarHeight)
         

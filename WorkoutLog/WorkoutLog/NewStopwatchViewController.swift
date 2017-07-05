@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class NewStopwatchViewController: UIViewController {
     
@@ -59,6 +60,10 @@ class NewStopwatchViewController: UIViewController {
     var timeCount: TimeInterval = 0.0
     
     var statusBar = UIStatusBarStyle.self
+    
+    // Sound Effect
+    var audioPlayer = AVAudioPlayer()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,14 +72,21 @@ class NewStopwatchViewController: UIViewController {
         //view.addGestureRecognizer(singleTap)
         statusBarView.backgroundColor = UIColor.exerciseDarkBlue
         
+        //Audio
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "coins", ofType: "m4a")!))
+            audioPlayer.prepareToPlay()
+        } catch {
+            print(error.localizedDescription)
+        }
+        
     }
 
     
 
     func singleTapped() {
         if (isPlaying == false) {
-            let aSelector: Selector = "updateTime"
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate
             isPlaying = true
         } else {
@@ -84,7 +96,7 @@ class NewStopwatchViewController: UIViewController {
     }
     
     func updateTime() {
-        var currentTime = NSDate.timeIntervalSinceReferenceDate
+        let currentTime = NSDate.timeIntervalSinceReferenceDate
         var elapsedTime: TimeInterval = currentTime - startTime
         
         let minutes = UInt8(elapsedTime / 60.0)
@@ -108,6 +120,7 @@ class NewStopwatchViewController: UIViewController {
             timeLabel.text = "00:00.00"
             timer.invalidate()
             isPlaying = false
+            audioPlayer.play()
         } else {
             timeLabel.text = timeString(time: timeCount)
         }
