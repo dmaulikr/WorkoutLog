@@ -19,7 +19,6 @@ class ProgressPhotoViewController: UIViewController, UIGestureRecognizerDelegate
     }
 
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
         if progressPhotoImageView.image != UIImage(named: "TapToAddImage") {
             let photo = progressPhotoImageView.image ?? UIImage()
             guard let weight = weightTextField.text, !weight.isEmpty else { return }
@@ -93,7 +92,6 @@ class ProgressPhotoViewController: UIViewController, UIGestureRecognizerDelegate
 
 
 }
-
 
 //MARK: - Keyboard Extension
 extension UIViewController {

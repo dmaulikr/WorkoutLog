@@ -11,11 +11,14 @@ import UIKit
 class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var progresses: [Progress]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        progresses = ProgressController.shared.progresses
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,10 +28,10 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ProgressHistoryTableViewCell else { return UITableViewCell() }
         
-        let progress = ProgressController.shared.progresses[indexPath.row]
-        
-        cell.updateViews(progress: progress)
-        
+        if let progresses = progresses {
+            let progress = progresses[indexPath.row]
+            cell.updateViews(progress: progress)
+        }
         return cell
     }
 
