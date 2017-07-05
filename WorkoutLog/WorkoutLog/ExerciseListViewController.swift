@@ -68,30 +68,30 @@ class ExerciseListViewController: UIViewController, UITableViewDataSource, UITab
         header.textLabel?.textColor = titleColor
         
         //Add button to header view
-        let button = UIButton(frame: CGRect(x: tableView.frame.width - (header.frame.height + 10), y: 0, width: header.frame.height, height: header.frame.height))
-        
-        self.button = button
-        button.tag = section
-        
-        button.setImage(#imageLiteral(resourceName: "checkmarkBlue"), for: UIControlState.normal)
-        
-        button.addTarget(self, action: #selector(saveExercise(sender:)), for: .touchUpInside)
-        
-        header.addSubview(button)
+//        let button = UIButton(frame: CGRect(x: tableView.frame.width - (header.frame.height + 10), y: 0, width: header.frame.height, height: header.frame.height))
+//        
+//        self.button = button
+//        button.tag = section
+//        
+//        button.setImage(#imageLiteral(resourceName: "checkmarkBlue"), for: UIControlState.normal)
+//        
+//        button.addTarget(self, action: #selector(saveExercise(sender:)), for: .touchUpInside)
+//        
+//        header.addSubview(button)
     }
     
-    func saveExercise(sender: Any?) {
-        guard let button = sender as? UIButton else { return }
-        button.setImage(#imageLiteral(resourceName: "checkmarkBlue"), for: UIControlState.normal)
-        delegate?.checkmarkButtonTapped(sender: self)
-        guard let exercises = day?.exercises,
-        let exerciseArray = Array(exercises) as? [Exercise] else { return }
-        let exercise = exerciseArray[button.tag]
-        let sets = exercise.initialSets
-        
-        let updatedExercise = ExerciseController.shared.updatedExercise(exercise: exercise, setNumber: sets)
-        self.day?.addToExercises(updatedExercise)
-    }
+//    func saveExercise(sender: Any?) {
+//        guard let button = sender as? UIButton else { return }
+//        button.setImage(#imageLiteral(resourceName: "checkmarkBlue"), for: UIControlState.normal)
+//        delegate?.checkmarkButtonTapped(sender: self)
+//        guard let exercises = day?.exercises,
+//        let exerciseArray = Array(exercises) as? [Exercise] else { return }
+//        let exercise = exerciseArray[button.tag]
+//        let sets = exercise.initialSets
+//        
+//        let updatedExercise = ExerciseController.shared.updatedExercise(exercise: exercise, setNumber: sets)
+//        self.day?.addToExercises(updatedExercise)
+//    }
     
     // MARK: - Table view data source
     

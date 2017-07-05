@@ -29,23 +29,18 @@ class ExerciseTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     @IBAction func weightEntered(_ sender: Any) {
         delegate?.startTextFieldEnter(sender: self)
-        guard let set = set,
-            let exercise = exercise else { return }
-        newSet = updateSetWeight(set: set)
-        if newExercise == nil {
-            //newExercise = ExerciseController.shared.updatedExercise(exercise: exercise)
-            //newExercise?.addToSets(set)
-        }
+        guard let set = set else { return }
+        updateSetWeight(set: set)
     }
     @IBAction func repsEntered(_ sender: Any) {
         delegate?.startTextFieldEnter(sender: self)
         guard let set = set else { return }
-        newSet = updateSetReps(set: set)
+        updateSetReps(set: set)
     }
     @IBAction func noteEntered(_ sender: Any) {
         delegate?.startTextFieldEnter(sender: self)
         guard let set = set else { return }
-        newSet = updateSetNote(set: set)
+        updateSetNote(set: set)
     }
     
     //MARK: - Internal Properties
