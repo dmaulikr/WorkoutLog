@@ -102,9 +102,8 @@ class CreateDayTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.clearsSelectionOnViewWillAppear = false
-        //self.navigationItem.leftBarButtonItem = self.editButtonItem
         navigationItem.title = "Add exercise to day ->"
+        navigationItem.leftBarButtonItem?.title = "Done"
         self.hideKeyboardWhenTappedAround()
     }
 
@@ -128,21 +127,12 @@ class CreateDayTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            guard let day = day,
-                let exercise = day.exercises?[indexPath.row] as? Exercise else { return }
-            ExerciseController.shared.deleteExercise(exercise: exercise, from: day)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
-
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-    }
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            guard let day = day,
+//                let exercise = day.exercises?[indexPath.row] as? Exercise else { return }
+//            ExerciseController.shared.deleteExercise(exercise: exercise, from: day)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
+//    }
 }
