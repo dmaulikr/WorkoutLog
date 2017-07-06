@@ -46,6 +46,14 @@ class DayListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if routine?.days?.count == 0 {
+            navigationItem.title = "Add a day to your routine ->"
+        } else {
+            guard let routine = routine,
+            let name = routine.name else { return }
+            navigationItem.title = "\(name)"
+        }
+        
     }
 
     // MARK: - Table view data source

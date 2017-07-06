@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,11 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Theme.configureAppearance()
         
         UIApplication.shared.statusBarStyle = .lightContent
-        return true
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if !granted {
+                print("Notification access has been denied")
+            }
+        }
+        return true
     }
-    
-    
-
 }
 

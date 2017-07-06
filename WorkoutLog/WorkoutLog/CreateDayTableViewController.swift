@@ -104,6 +104,7 @@ class CreateDayTableViewController: UITableViewController {
         super.viewDidLoad()
         //self.clearsSelectionOnViewWillAppear = false
         //self.navigationItem.leftBarButtonItem = self.editButtonItem
+        navigationItem.title = "Add exercise to day ->"
         self.hideKeyboardWhenTappedAround()
     }
 

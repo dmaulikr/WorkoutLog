@@ -41,6 +41,12 @@ class RoutineTableViewController: UITableViewController {
         super.viewDidLoad()
         self.clearsSelectionOnViewWillAppear = false
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
+        if RoutineController.shared.routines.count == 0 {
+            navigationItem.title = "Add a routine to get started ->"
+        } else {
+            navigationItem.title = "Routines"
+        }
     }
 
     // MARK: - Table view data source
