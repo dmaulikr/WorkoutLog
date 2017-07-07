@@ -27,6 +27,6 @@ The Workout Log is a personal project created to learn and practice IOS developm
 as a resource for CoreData and Swift development.
 
 ## More Images
-http://imgur.com/5dXeNfv
-http://imgur.com/hk3dP4I
-http://imgur.com/cQzJpCO
+* http://imgur.com/5dXeNfv
+* http://imgur.com/hk3dP4I
+* http://imgur.com/cQzJpCO
