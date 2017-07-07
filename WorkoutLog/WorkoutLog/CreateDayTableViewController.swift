@@ -103,8 +103,8 @@ class CreateDayTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Add exercise to day ->"
-        navigationItem.leftBarButtonItem?.title = "Done"
-        self.hideKeyboardWhenTappedAround()
+        let backButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: nil, action: nil)
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 
     // MARK: - Table view data source
