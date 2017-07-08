@@ -1,0 +1,12 @@
+PODS:
+  - SwiftyWalkthrough (0.0.3)
+
+DEPENDENCIES:
+  - SwiftyWalkthrough
+
+SPEC CHECKSUMS:
+  SwiftyWalkthrough: 57946c3065a49d63f87a562eb0dc932b94a96d7f
+
+PODFILE CHECKSUM: bf4c51749a9e65860bb1d250898d0f6acfee5bca
+
+COCOAPODS: 1.2.1
