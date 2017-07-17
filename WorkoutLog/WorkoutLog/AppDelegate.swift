@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Notification access has been denied")
             }
         }
+        
+        IQKeyboardManager.sharedManager().enable = true
+        
         return true
     }
 }

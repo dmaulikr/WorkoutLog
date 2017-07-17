@@ -1,12 +1,12 @@
 PODS:
-  - SwiftyWalkthrough (0.0.3)
+  - IQKeyboardManagerSwift (4.0.10)
 
 DEPENDENCIES:
-  - SwiftyWalkthrough
+  - IQKeyboardManagerSwift (= 4.0.10)
 
 SPEC CHECKSUMS:
-  SwiftyWalkthrough: 57946c3065a49d63f87a562eb0dc932b94a96d7f
+  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
 
-PODFILE CHECKSUM: bf4c51749a9e65860bb1d250898d0f6acfee5bca
+PODFILE CHECKSUM: eed7ac05fc6581a78fd58aa852f1d9c417007a3d
 
 COCOAPODS: 1.2.1
