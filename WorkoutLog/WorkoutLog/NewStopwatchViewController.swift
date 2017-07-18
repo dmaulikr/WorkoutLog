@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import UserNotifications
+import NotificationCenter
 
 class NewStopwatchViewController: UIViewController {
     
@@ -73,7 +74,6 @@ class NewStopwatchViewController: UIViewController {
     var statusBar = UIStatusBarStyle.self
     
     // Sound Effect
-    var audioPlayer = AVAudioPlayer()
     fileprivate let userNotificationIdentifier = "timerNotification"
     
     override func viewDidLoad() {
@@ -82,14 +82,6 @@ class NewStopwatchViewController: UIViewController {
         singleTap.numberOfTapsRequired = 1
         //view.addGestureRecognizer(singleTap)
         statusBarView.backgroundColor = UIColor.exerciseDarkBlue
-        
-        //Audio
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "coins", ofType: "m4a")!))
-            audioPlayer.prepareToPlay()
-        } catch {
-            print(error.localizedDescription)
-        }
     }
     
     // Notification
@@ -97,8 +89,11 @@ class NewStopwatchViewController: UIViewController {
         // Notification content
         let notificationContent = UNMutableNotificationContent()
         notificationContent.sound = UNNotificationSound.default()
+        notificationContent.title = "Timer is finished!"
+        notificationContent.body = "Get back to work!"
         
         // Time remaining to date componenets
+        
         guard let timeRemaining = self.timeRemaining else { return }
         let fireDate = Date(timeInterval: timeRemaining, since: Date())
         let dateComponents = Calendar.current.dateComponents([.minute, .second], from: fireDate)
