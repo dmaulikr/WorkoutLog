@@ -84,12 +84,12 @@ class RoutineViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDayListSegue" {
-            guard let destinationVC = segue.destination as? DayListTableViewController,
+            guard let destinationVC = segue.destination as? DayListViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
             let routine = RoutineController.shared.routines[indexPath.row]
             if routine.days == nil {
                 destinationVC.routine = routine
-                destinationVC.navigationItem.title = "Please add a day to your routine ->"
+                destinationVC.navigationItem.title = "Please add a day to your routine"
             } else {
                 destinationVC.routine = routine
                 destinationVC.navigationItem.title = routine.name
