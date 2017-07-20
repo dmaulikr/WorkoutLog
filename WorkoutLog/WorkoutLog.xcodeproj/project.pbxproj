@@ -45,7 +45,7 @@
 		4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */; };
 		4DCCDA5B1EDF5267002BB5E6 /* Set+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA5A1EDF5267002BB5E6 /* Set+Convenience.swift */; };
 		4DCCDA5D1EDF5309002BB5E6 /* SetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA5C1EDF5309002BB5E6 /* SetController.swift */; };
-		4DE0B4371F0D97B600DC7CE6 /* coins.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 4DE0B4361F0D973900DC7CE6 /* coins.m4a */; };
+		4DEEC9B11F202AB600134A6D /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEC9B01F202AB600134A6D /* RoutineViewController.swift */; };
 		4DF4E5AE1F10652F00F7FC29 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4E5AD1F10652F00F7FC29 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +90,7 @@
 		4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDayTableViewController.swift; sourceTree = "<group>"; };
 		4DCCDA5A1EDF5267002BB5E6 /* Set+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+Convenience.swift"; sourceTree = "<group>"; };
 		4DCCDA5C1EDF5309002BB5E6 /* SetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetController.swift; sourceTree = "<group>"; };
-		4DE0B4361F0D973900DC7CE6 /* coins.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = coins.m4a; sourceTree = "<group>"; };
+		4DEEC9B01F202AB600134A6D /* RoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
 		4DF4E5AD1F10652F00F7FC29 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		59E1711EF74147E6695FD413 /* Pods-WorkoutLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutLog.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutLog/Pods-WorkoutLog.release.xcconfig"; sourceTree = "<group>"; };
 		C2D8CB050BF43736236A6B75 /* Pods_WorkoutLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +182,6 @@
 		4DCCDA2D1EDC9253002BB5E6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4DE0B4351F0D94CD00DC7CE6 /* Music */,
 				4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */,
 				4DCCDA241EDC9249002BB5E6 /* LaunchScreen.storyboard */,
 				4DCCDA271EDC9249002BB5E6 /* Info.plist */,
@@ -224,6 +223,7 @@
 			children = (
 				4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */,
 				4DCCDA491EDCBF9B002BB5E6 /* RoutineTableViewController.swift */,
+				4DEEC9B01F202AB600134A6D /* RoutineViewController.swift */,
 				4DCCDA4B1EDCCB71002BB5E6 /* DayListTableViewController.swift */,
 				4DCCDA4D1EDCD111002BB5E6 /* CreateDayTableViewController.swift */,
 				4DCCDA521EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift */,
@@ -244,14 +244,6 @@
 				4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		4DE0B4351F0D94CD00DC7CE6 /* Music */ = {
-			isa = PBXGroup;
-			children = (
-				4DE0B4361F0D973900DC7CE6 /* coins.m4a */,
-			);
-			name = Music;
 			sourceTree = "<group>";
 		};
 		932FE9E560105131F7C893D4 /* Frameworks */ = {
@@ -325,7 +317,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DE0B4371F0D97B600DC7CE6 /* coins.m4a in Resources */,
 				4DCCDA261EDC9249002BB5E6 /* LaunchScreen.storyboard in Resources */,
 				4DCCDA231EDC9249002BB5E6 /* Assets.xcassets in Resources */,
 				4DCCDA211EDC9249002BB5E6 /* Main.storyboard in Resources */,
@@ -394,6 +385,7 @@
 				4DCCDA531EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift in Sources */,
 				4DCCDA3A1EDCAC98002BB5E6 /* CoreDataStack.swift in Sources */,
 				4DCCDA4E1EDCD111002BB5E6 /* CreateDayTableViewController.swift in Sources */,
+				4DEEC9B11F202AB600134A6D /* RoutineViewController.swift in Sources */,
 				4D1521761F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift in Sources */,
 				4D1520C31F02DAD8000A1E79 /* Measurement+Convenience.swift in Sources */,
 				4D15207E1EFC8115000A1E79 /* Theme.swift in Sources */,
