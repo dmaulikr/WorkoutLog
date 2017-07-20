@@ -11,13 +11,38 @@ import UIKit
 class RoutineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func createRoutineButtonTapped(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Add Routine", message: "Add a new workout routine.", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        var nameTextField: UITextField?
+        
+        alertController.addTextField { (textField) in
+            nameTextField = textField
+            textField.autocorrectionType = .yes
+            textField.autocapitalizationType = .sentences
+            textField.spellCheckingType = .yes
+        }
+        let addedAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            guard let name = nameTextField?.text else { return }
+            RoutineController.shared.createRoutine(name: name)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(addedAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        //self.navigationItem.leftBarButtonItem = self.editButtonItem
         
         if RoutineController.shared.routines.count == 0 {
-            navigationItem.title = "Add a routine to get started ->"
+            navigationItem.title = "Add a routine to get started"
         } else {
             navigationItem.title = "Routines"
         }

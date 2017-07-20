@@ -46,6 +46,7 @@
 		4DCCDA5B1EDF5267002BB5E6 /* Set+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA5A1EDF5267002BB5E6 /* Set+Convenience.swift */; };
 		4DCCDA5D1EDF5309002BB5E6 /* SetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA5C1EDF5309002BB5E6 /* SetController.swift */; };
 		4DEEC9B11F202AB600134A6D /* RoutineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEC9B01F202AB600134A6D /* RoutineViewController.swift */; };
+		4DEEC9B61F2173BE00134A6D /* DayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEEC9B51F2173BE00134A6D /* DayListViewController.swift */; };
 		4DF4E5AE1F10652F00F7FC29 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF4E5AD1F10652F00F7FC29 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		4DCCDA5A1EDF5267002BB5E6 /* Set+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Set+Convenience.swift"; sourceTree = "<group>"; };
 		4DCCDA5C1EDF5309002BB5E6 /* SetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetController.swift; sourceTree = "<group>"; };
 		4DEEC9B01F202AB600134A6D /* RoutineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineViewController.swift; sourceTree = "<group>"; };
+		4DEEC9B51F2173BE00134A6D /* DayListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayListViewController.swift; sourceTree = "<group>"; };
 		4DF4E5AD1F10652F00F7FC29 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		59E1711EF74147E6695FD413 /* Pods-WorkoutLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutLog.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutLog/Pods-WorkoutLog.release.xcconfig"; sourceTree = "<group>"; };
 		C2D8CB050BF43736236A6B75 /* Pods_WorkoutLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkoutLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,7 @@
 				4DCCDA411EDCB3C4002BB5E6 /* ModelControllers */,
 				4DCCDA4F1EDDD450002BB5E6 /* Views */,
 				4DCCDA421EDCB3D8002BB5E6 /* ViewControllers */,
+				4DEEC9B41F21718600134A6D /* OldViewControllers */,
 				4DCCDA2D1EDC9253002BB5E6 /* Resources */,
 			);
 			path = WorkoutLog;
@@ -221,17 +224,16 @@
 		4DCCDA421EDCB3D8002BB5E6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D98009B1F0AE58700968CBB /* Tabbar */,
+				4D98009C1F0AE5CD00968CBB /* Progress & Stopwatch */,
 				4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */,
-				4DCCDA491EDCBF9B002BB5E6 /* RoutineTableViewController.swift */,
 				4DEEC9B01F202AB600134A6D /* RoutineViewController.swift */,
 				4DCCDA4B1EDCCB71002BB5E6 /* DayListTableViewController.swift */,
+				4DEEC9B51F2173BE00134A6D /* DayListViewController.swift */,
 				4DCCDA4D1EDCD111002BB5E6 /* CreateDayTableViewController.swift */,
-				4DCCDA521EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift */,
 				4D1520B81F0182DC000A1E79 /* ExerciseListViewController.swift */,
 				4DCCDA541EDE07BD002BB5E6 /* ExerciseHistoryTableViewController.swift */,
 				4DCCDA581EDE2DD1002BB5E6 /* EditDayTableViewController.swift */,
-				4D98009B1F0AE58700968CBB /* Tabbar */,
-				4D98009C1F0AE5CD00968CBB /* Progress & Stopwatch */,
 				4DF4E5AD1F10652F00F7FC29 /* OnboardingViewController.swift */,
 			);
 			name = ViewControllers;
@@ -244,6 +246,15 @@
 				4DCCDA561EDE293A002BB5E6 /* ExerciseTableViewCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		4DEEC9B41F21718600134A6D /* OldViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4DCCDA521EDDE4C0002BB5E6 /* ExerciseListTableViewController.swift */,
+				4DCCDA491EDCBF9B002BB5E6 /* RoutineTableViewController.swift */,
+			);
+			name = OldViewControllers;
 			sourceTree = "<group>";
 		};
 		932FE9E560105131F7C893D4 /* Frameworks */ = {
@@ -406,6 +417,7 @@
 				4DCCDA401EDCB2F4002BB5E6 /* Routine+Convenience.swift in Sources */,
 				4D1520C51F02DAF4000A1E79 /* Progress+Convenience.swift in Sources */,
 				4D1520C71F02F2BF000A1E79 /* MeasurementController.swift in Sources */,
+				4DEEC9B61F2173BE00134A6D /* DayListViewController.swift in Sources */,
 				4DCCDA591EDE2DD1002BB5E6 /* EditDayTableViewController.swift in Sources */,
 				4DCCDA441EDCB4E1002BB5E6 /* ExerciseController.swift in Sources */,
 				4D1521741F06F218000A1E79 /* ProgressHistoryViewController.swift in Sources */,

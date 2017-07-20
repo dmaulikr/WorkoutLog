@@ -24,7 +24,30 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Eeo-ip-zt7">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.92469829319999997" green="0.94251453880000002" blue="0.94536954159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.92469829319999997" green="0.94251453880000002" blue="0.94536954159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="nTX-LG-OOC">
+                                    <rect key="frame" x="0.0" y="95" width="375" height="69"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-8b-wDp">
+                                            <rect key="frame" x="8" y="8" width="359" height="53"/>
+                                            <state key="normal" image="RoutineButton">
+                                                <color key="titleShadowColor" red="0.17263332009999999" green="0.24162840839999999" blue="0.3118401468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="createRoutineButtonTapped:" destination="iTF-4S-FaR" eventType="touchUpInside" id="7zP-ZK-L7p"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.92469829319999997" green="0.94251453880000002" blue="0.94536954159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="GRh-8b-wDp" secondAttribute="bottom" constant="8" id="E14-ZO-xtP"/>
+                                        <constraint firstItem="GRh-8b-wDp" firstAttribute="leading" secondItem="nTX-LG-OOC" secondAttribute="leading" constant="8" id="NSS-C6-KGW"/>
+                                        <constraint firstItem="GRh-8b-wDp" firstAttribute="top" secondItem="nTX-LG-OOC" secondAttribute="top" constant="8" id="YCW-CG-yOB"/>
+                                        <constraint firstAttribute="trailing" secondItem="GRh-8b-wDp" secondAttribute="trailing" constant="8" id="aHh-nC-SMD"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="routineCell" rowHeight="67" id="xnQ-zz-gxP">
                                         <rect key="frame" x="0.0" y="28" width="375" height="67"/>
@@ -33,11 +56,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="66.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92469829319999997" green="0.94251453880000002" blue="0.94536954159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="r7J-97-SZu" kind="show" identifier="toDayListSegue" id="ZZX-f3-6tY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92469829319999997" green="0.94251453880000002" blue="0.94536954159999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Eeo-ip-zt7" firstAttribute="top" secondItem="B36-AI-qPp" secondAttribute="bottom" id="3Xb-qa-Sj0"/>
                             <constraint firstItem="pT9-ki-lNt" firstAttribute="top" secondItem="Eeo-ip-zt7" secondAttribute="bottom" id="bSL-N2-pyF"/>
@@ -123,9 +150,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="JAy-gE-YEL" kind="show" identifier="toExerciseListSegue" id="b4y-4W-AOg"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -146,7 +170,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kwj-FU-EHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1668" y="-2"/>
+            <point key="canvasLocation" x="1668" y="-743"/>
         </scene>
         <!--Exercise List-->
         <scene sceneID="KHj-2v-Z7r">
@@ -351,6 +375,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uz5-h7-PSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3335" y="441"/>
+        </scene>
+        <!--Day List View Controller-->
+        <scene sceneID="wll-Bg-emb">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="r7J-97-SZu" customClass="DayListViewController" customModule="WorkoutLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PdT-UQ-2iL"/>
+                        <viewControllerLayoutGuide type="bottom" id="gLs-0N-4EB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p9F-k3-bIg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hQM-zn-Gcz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="rwS-Y8-zQX">
+                                    <rect key="frame" x="0.0" y="72" width="375" height="69"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usF-Et-22G">
+                                            <rect key="frame" x="8" y="5" width="359" height="59"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="DayButton"/>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="dayCell" textLabel="gjU-pq-AfJ" detailTextLabel="pcK-sV-26D" style="IBUITableViewCellStyleValue1" id="Bdf-7r-n4v">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bdf-7r-n4v" id="SFm-06-ucH">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gjU-pq-AfJ">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pcK-sV-26D">
+                                                    <rect key="frame" x="296" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="JAy-gE-YEL" kind="show" identifier="toExerciseListSegue" id="1Ce-ag-lFM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hQM-zn-Gcz" secondAttribute="trailing" id="7aC-qu-xoz"/>
+                            <constraint firstItem="gLs-0N-4EB" firstAttribute="top" secondItem="hQM-zn-Gcz" secondAttribute="bottom" id="Bzi-TU-nqc"/>
+                            <constraint firstItem="hQM-zn-Gcz" firstAttribute="leading" secondItem="p9F-k3-bIg" secondAttribute="leading" id="sw6-h3-9Mm"/>
+                            <constraint firstItem="hQM-zn-Gcz" firstAttribute="top" secondItem="PdT-UQ-2iL" secondAttribute="bottom" id="uJk-A6-OXU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="irI-B4-4YI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1668" y="-2"/>
         </scene>
         <!--Create Day-->
         <scene sceneID="52y-Xc-frp">
@@ -843,6 +938,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="DayButton" width="243" height="59"/>
+        <image name="RoutineButton" width="243" height="59"/>
         <image name="TapToAddImage" width="417" height="545"/>
         <image name="camera-7" width="30" height="30"/>
         <image name="clock-stopwatch-7" width="29" height="30"/>
