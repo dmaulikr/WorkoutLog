@@ -94,7 +94,7 @@ class DayListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toCreateDaySegue" {
-            guard let destinationVC = segue.destination as? CreateDayTableViewController else { return }
+            guard let destinationVC = segue.destination as? CreateDayViewController else { return }
             guard let routine = routine else { return }
             guard let day = day else { return }
             destinationVC.routine = routine

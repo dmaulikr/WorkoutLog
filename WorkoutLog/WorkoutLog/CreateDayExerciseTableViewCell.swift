@@ -11,11 +11,12 @@ import UIKit
 class CreateDayExerciseTableViewCell: UITableViewCell {
 
     //MARK: - Outlets
-    
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var setsNumberLabel: UILabel!
     @IBOutlet weak var repsNumberLabel: UILabel!
     @IBOutlet weak var weightNumberLabel: UILabel!
+    
     
     //MARK: - Internal Properties
     
