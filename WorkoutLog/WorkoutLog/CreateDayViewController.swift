@@ -131,4 +131,14 @@ class CreateDayViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let exercise = exercises[indexPath.row]
+            ExerciseController.shared.deleteExercise(exercise: exercise, from: day)
+            guard let index = exercises.index(of: exercise) else { return }
+            exercises.remove(at: index)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
