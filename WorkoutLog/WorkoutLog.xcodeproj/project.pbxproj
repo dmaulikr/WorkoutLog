@@ -12,7 +12,6 @@
 		4D15207E1EFC8115000A1E79 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15207D1EFC8115000A1E79 /* Theme.swift */; };
 		4D1520801EFC9025000A1E79 /* ProgressPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */; };
 		4D1520B91F0182DC000A1E79 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520B81F0182DC000A1E79 /* ExerciseListViewController.swift */; };
-		4D1520BD1F01AD35000A1E79 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520BC1F01AD35000A1E79 /* Stopwatch.swift */; };
 		4D1520BF1F01B3BF000A1E79 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520BE1F01B3BF000A1E79 /* CustomTabBarView.swift */; };
 		4D1520C11F01B6F2000A1E79 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520C01F01B6F2000A1E79 /* CustomTabBarController.swift */; };
 		4D1520C31F02DAD8000A1E79 /* Measurement+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1520C21F02DAD8000A1E79 /* Measurement+Convenience.swift */; };
@@ -24,6 +23,8 @@
 		4D1521761F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1521751F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift */; };
 		4D1CDE9F1F219D9000CE61EA /* CreateDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CDE9E1F219D9000CE61EA /* CreateDayViewController.swift */; };
 		4D98009A1F0AC52900968CBB /* XMSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9800991F0AC52900968CBB /* XMSegmentedControl.swift */; };
+		4DCB4CCF1F26ED91008B980C /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4CCE1F26ED91008B980C /* Stopwatch.swift */; };
+		4DCB4CEF1F2A9A20008B980C /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB4CEE1F2A9A20008B980C /* TimerLabel.swift */; };
 		4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */; };
 		4DCCDA211EDC9249002BB5E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA1F1EDC9249002BB5E6 /* Main.storyboard */; };
 		4DCCDA231EDC9249002BB5E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DCCDA221EDC9249002BB5E6 /* Assets.xcassets */; };
@@ -57,7 +58,6 @@
 		4D15207D1EFC8115000A1E79 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPhotoViewController.swift; sourceTree = "<group>"; };
 		4D1520B81F0182DC000A1E79 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
-		4D1520BC1F01AD35000A1E79 /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		4D1520BE1F01B3BF000A1E79 /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		4D1520C01F01B6F2000A1E79 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		4D1520C21F02DAD8000A1E79 /* Measurement+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Measurement+Convenience.swift"; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		4D1521751F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		4D1CDE9E1F219D9000CE61EA /* CreateDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateDayViewController.swift; sourceTree = "<group>"; };
 		4D9800991F0AC52900968CBB /* XMSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMSegmentedControl.swift; sourceTree = "<group>"; };
+		4DCB4CCE1F26ED91008B980C /* Stopwatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		4DCB4CEE1F2A9A20008B980C /* TimerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLabel.swift; sourceTree = "<group>"; };
 		4DCCDA181EDC9249002BB5E6 /* WorkoutLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DCCDA1B1EDC9249002BB5E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DCCDA201EDC9249002BB5E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,8 +147,10 @@
 			children = (
 				4D1521751F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift */,
 				4D15207F1EFC9025000A1E79 /* ProgressPhotoViewController.swift */,
-				4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */,
 				4D1521731F06F218000A1E79 /* ProgressHistoryViewController.swift */,
+				4D1521301F05BA1D000A1E79 /* NewStopwatchViewController.swift */,
+				4DCB4CCE1F26ED91008B980C /* Stopwatch.swift */,
+				4DCB4CEE1F2A9A20008B980C /* TimerLabel.swift */,
 			);
 			name = "Progress & Stopwatch";
 			sourceTree = "<group>";
@@ -203,7 +207,6 @@
 				4DCCDA3B1EDCACE1002BB5E6 /* Exercise+Convenience.swift */,
 				4DCCDA3D1EDCAFC0002BB5E6 /* Day+Convenience.swift */,
 				4DCCDA3F1EDCB2F4002BB5E6 /* Routine+Convenience.swift */,
-				4D1520BC1F01AD35000A1E79 /* Stopwatch.swift */,
 				4D1520C21F02DAD8000A1E79 /* Measurement+Convenience.swift */,
 				4D1520C41F02DAF4000A1E79 /* Progress+Convenience.swift */,
 			);
@@ -402,8 +405,8 @@
 				4DEEC9B11F202AB600134A6D /* RoutineViewController.swift in Sources */,
 				4D1521761F06F46A000A1E79 /* ProgressHistoryTableViewCell.swift in Sources */,
 				4D1520C31F02DAD8000A1E79 /* Measurement+Convenience.swift in Sources */,
+				4DCB4CEF1F2A9A20008B980C /* TimerLabel.swift in Sources */,
 				4D15207E1EFC8115000A1E79 /* Theme.swift in Sources */,
-				4D1520BD1F01AD35000A1E79 /* Stopwatch.swift in Sources */,
 				4DCCDA4C1EDCCB71002BB5E6 /* DayListTableViewController.swift in Sources */,
 				4D1520BF1F01B3BF000A1E79 /* CustomTabBarView.swift in Sources */,
 				4DCCDA5D1EDF5309002BB5E6 /* SetController.swift in Sources */,
@@ -414,6 +417,7 @@
 				4DCCDA4A1EDCBF9B002BB5E6 /* RoutineTableViewController.swift in Sources */,
 				4D1520B91F0182DC000A1E79 /* ExerciseListViewController.swift in Sources */,
 				4DCCDA381EDCA6B9002BB5E6 /* WorkoutLog.xcdatamodeld in Sources */,
+				4DCB4CCF1F26ED91008B980C /* Stopwatch.swift in Sources */,
 				4DCCDA1C1EDC9249002BB5E6 /* AppDelegate.swift in Sources */,
 				4D98009A1F0AC52900968CBB /* XMSegmentedControl.swift in Sources */,
 				4DCCDA511EDDD49D002BB5E6 /* CreateDayExerciseTableViewCell.swift in Sources */,

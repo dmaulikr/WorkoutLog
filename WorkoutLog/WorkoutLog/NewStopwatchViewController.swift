@@ -11,8 +11,9 @@ import AVFoundation
 import UserNotifications
 import NotificationCenter
 
-class NewStopwatchViewController: UIViewController {
+class NewStopwatchViewController: UIViewController, StopwatchDelegate {
     
+    //MARK: - Outlets and Actions
     
     @IBOutlet weak var statusBarView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -21,70 +22,71 @@ class NewStopwatchViewController: UIViewController {
         singleTapped()
     }
     @IBAction func thirtySecondButtonTapped(_ sender: Any) {
+        self.cancelNotification()
         timeCount = 30.0
-        timeRemaining = timeCount
-        if !self.isPlaying {
-            self.timeLabel.text = self.timeString(time: self.timeCount)
-            self.timer = Timer.scheduledTimer(timeInterval: self.timeInterval, target: self, selector: #selector(self.timerDidEnd(timer:)), userInfo: nil, repeats: true)
-            self.isPlaying = true
-            self.scheduleLocalNotification()
-        }
+        self.timeRemaining = timeCount
+        self.stopwatch.type = StopwatchType.CountDown
+        self.stopwatch.countDownTime = timeCount
+        self.stopwatch.start()
+        self.isPlaying = true
+        self.scheduleLocalNotification()
     }
     @IBAction func oneMinuteButtonTapped(_ sender: Any) {
+        self.cancelNotification()
         timeCount = 60.0
-        timeRemaining = timeCount
-        if !isPlaying {
-            timeLabel.text = timeString(time: timeCount)
-            timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(timerDidEnd(timer:)), userInfo: nil, repeats: true)
-            isPlaying = true
-            self.scheduleLocalNotification()
-        }
+        self.timeRemaining = timeCount
+        self.stopwatch.type = StopwatchType.CountDown
+        self.stopwatch.countDownTime = timeCount
+        self.stopwatch.start()
+        isPlaying = true
+        self.scheduleLocalNotification()
     }
     @IBAction func twoMinuteButtonTapped(_ sender: Any) {
+        self.cancelNotification()
         timeCount = 120.0
-        timeRemaining = timeCount
-        if !isPlaying {
-            timeLabel.text = timeString(time: timeCount)
-            timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(timerDidEnd(timer:)), userInfo: nil, repeats: true)
-            isPlaying = true
-            self.scheduleLocalNotification()
-        }
+        self.timeRemaining = timeCount
+        self.stopwatch.type = StopwatchType.CountDown
+        self.stopwatch.countDownTime = timeCount
+        self.stopwatch.start()
+        isPlaying = true
+        self.scheduleLocalNotification()
     }
     @IBAction func threeMinuteButtonTapped(_ sender: Any) {
+        self.cancelNotification()
         timeCount = 180.0
-        timeRemaining = timeCount
-        if !isPlaying {
-            timeLabel.text = timeString(time: timeCount)
-            timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(timerDidEnd(timer:)), userInfo: nil, repeats: true)
-            isPlaying = true
-            self.scheduleLocalNotification()
-        }
+        self.timeRemaining = timeCount
+        self.stopwatch.type = StopwatchType.CountDown
+        self.stopwatch.countDownTime = timeCount
+        self.stopwatch.start()
+        isPlaying = true
+        self.scheduleLocalNotification()
     }
     
-    var startTime = TimeInterval()
-    
-    var timer: Timer = Timer()
+    //MARK: - Internal Properties
     
     var isPlaying: Bool = false
-    
-    let timeInterval: TimeInterval = 0.01
     var timeCount: TimeInterval = 0.0
     var timeRemaining: TimeInterval?
     
     var statusBar = UIStatusBarStyle.self
     
-    // Sound Effect
+    lazy var stopwatch: Stopwatch = Stopwatch()
+    
     fileprivate let userNotificationIdentifier = "timerNotification"
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapped))
-        singleTap.numberOfTapsRequired = 1
-        //view.addGestureRecognizer(singleTap)
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        doubleTap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(doubleTap)
         statusBarView.backgroundColor = UIColor.exerciseDarkBlue
+        self.stopwatch.delegate = self
     }
     
-    // Notification
+    //MARK: - Notification
+
     func scheduleLocalNotification() {
         // Notification content
         let notificationContent = UNMutableNotificationContent()
@@ -113,57 +115,29 @@ class NewStopwatchViewController: UIViewController {
     func cancelNotification() {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [userNotificationIdentifier])
     }
-
+    
+    //MARK: - Internal Methods
+    
     func singleTapped() {
-        if (isPlaying == false) {
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-            startTime = NSDate.timeIntervalSinceReferenceDate
-            isPlaying = true
-        } else {
-            timer.invalidate()
-            isPlaying = false
-            cancelNotification()
+        if !isPlaying {
+            self.stopwatch.type = StopwatchType.CountUp
+            self.stopwatch.start()
+            self.isPlaying = true
+        } else if isPlaying {
+            self.stopwatch.pause()
+            self.isPlaying = false
         }
     }
     
-    func updateTime() {
-        let currentTime = NSDate.timeIntervalSinceReferenceDate
-        var elapsedTime: TimeInterval = currentTime - startTime
-        
-        let minutes = UInt8(elapsedTime / 60.0)
-        elapsedTime -= (TimeInterval(minutes) * 60)
-        
-        let seconds = UInt8(elapsedTime)
-        elapsedTime -= TimeInterval(seconds)
-        
-        let fraction = UInt8(elapsedTime * 100)
-        
-        let strMinutes = String(format: "%02d", minutes)
-        let strSeconds = String(format: "%02d", seconds)
-        let strFraction = String(format: "%02d", fraction)
-        
-        timeLabel.text = "\(strMinutes):\(strSeconds).\(strFraction)"
+    func doubleTapped() {
+        self.isPlaying = false
+        self.stopwatch.reset()
+        self.cancelNotification()
     }
     
-    func timerDidEnd(timer:Timer) {
-        timeCount = timeCount - timeInterval
-        if timeCount <= 0 {
-            timeLabel.text = "00:00.00"
-            timer.invalidate()
-            isPlaying = false
-            timeRemaining = nil
-            //audioPlayer.play()
-        } else {
-            timeLabel.text = timeString(time: timeCount)
-            guard let timeRemaining = timeRemaining else { return }
-            self.timeRemaining = timeRemaining - 1
-        }
-    }
+    //MARK: - Delegate Method
     
-    func timeString(time: TimeInterval) -> String {
-        let minutes = Int(time) / 60
-        let seconds = time - Double(minutes) * 60
-        let secondsFraction = seconds - Double(Int(seconds))
-        return String(format: "%02i:%02i.%01i",minutes,Int(seconds),Int(secondsFraction * 10))
+    func currentStopwatchTime(elapsedTime: String) {
+        self.timeLabel.text = elapsedTime
     }
 }

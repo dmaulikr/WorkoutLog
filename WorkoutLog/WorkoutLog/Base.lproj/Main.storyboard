@@ -1012,7 +1012,7 @@
                                     <action selector="circleButtonTapped:" destination="qQY-mN-Iwf" eventType="touchUpInside" id="cI2-dq-gDw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7I9-er-7Eb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7I9-er-7Eb" customClass="TimerLabel" customModule="WorkoutLog" customModuleProvider="target">
                                 <rect key="frame" x="92" y="140" width="190" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="190" id="8hf-Hm-ba3"/>
