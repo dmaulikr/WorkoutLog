@@ -34,5 +34,12 @@ class ProgressHistoryViewController: UIViewController, UITableViewDelegate, UITa
         }
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let progress = ProgressController.shared.progresses[indexPath.row]
+            ProgressController.shared.deleteProgress(progress: progress)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }

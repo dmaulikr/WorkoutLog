@@ -752,7 +752,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dFi-Bh-4dn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Workout Log" image="dumbbell-7" selectedImage="dumbbell-7" id="UPu-YP-u2E"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4kJ-8d-9Wo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4kJ-8d-9Wo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.90733188390731812" green="0.29692479968070984" blue="0.23667055368423462" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1107,7 +1107,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VZa-A6-FOP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Progress" image="camera-7" selectedImage="camera-7" id="zuB-US-evi"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ARU-HL-9zc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ARU-HL-9zc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -33,7 +33,8 @@ class ProgressController {
     
     func createProgressWithPhotoAndWeight(photo: UIImage, weight: Double) {
         let date = NSDate()
-        let photoData = UIImagePNGRepresentation(photo)! as NSData
+        //let photoData = UIImagePNGRepresentation(photo)! as NSData
+        guard let photoData = UIImageJPEGRepresentation(photo, 1.0) as NSData? else { return }
         _ = Progress(photo: photoData, date: date, weight: weight, context: CoreDataStack.context)
         saveToPersistentStorage()
     }
